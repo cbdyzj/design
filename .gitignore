@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# production
+build/
+dist/
+
+# misc
+.idea/
+.happypack
+.DS_Store
+
+npm-debug.log*
