@@ -1,8 +1,8 @@
-import { HashRouter as Router, Link, Route } from "react-router-dom";
+import { HashRouter as Router, Link, Route } from "react-router-dom"
 import React from "react";
 
-import Hello from "./component/hello";
-import Main from "./component/main";
+import Hello from "./component/hello"
+import Main from "./component/main"
 import './app.css'
 
 export default () => (
