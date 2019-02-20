@@ -6,8 +6,8 @@ interface Props {
 
 interface State { }
 
-export class Hello extends React.Component<Props, State> {
-    
+export default class extends React.Component<Props, State> {
+
     render() {
         return (
             <div>
