@@ -21,7 +21,10 @@ const config = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: 'src/index.html' })
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            favicon: 'favicon.ico',
+        })
     ],
     mode: 'development',
 }
