@@ -2,10 +2,10 @@
 
 > AMD（Asynchronous Module Definition）
 
-### Usage
+## Usage
 
 ```html
-<script data-main="scripts/main" src="scripts/require.js"></script>
+<script data-main="src/main" src="lib/require.js"></script>
 ```
 
 ### Independent modules
