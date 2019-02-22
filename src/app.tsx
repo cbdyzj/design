@@ -20,7 +20,7 @@ export default () => (
                 </ul>
             </nav>
             <hr />
-            <Route path='/' exact component={() => <h1>Hello! Hello!</h1>} />
+            <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
             <Route path='/hello' component={Hello} />
             <Route path='/bind2' component={Bind2} />
             <Route path='/picture-list' component={PictureList} />
