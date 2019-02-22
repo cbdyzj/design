@@ -21,10 +21,10 @@ export default () => (
             </nav>
             <hr />
             <Route path='/' exact component={() => <h1>Hello! Hello!</h1>} />
-            <Route path='/hello' component={() => <Hello />} />
-            <Route path='/bind2' component={() => <Bind2 />} />
-            <Route path='/picture-list' component={() => <PictureList />} />
-            <Route path='/main' component={() => <Main />} />
+            <Route path='/hello' component={Hello} />
+            <Route path='/bind2' component={Bind2} />
+            <Route path='/picture-list' component={PictureList} />
+            <Route path='/main' component={Main} />
         </div>
     </Router>
 )
