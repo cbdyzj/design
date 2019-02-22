@@ -1,6 +1,7 @@
 import React from 'react'
 
-import './bind2.css'
+// @ts-ignore
+import style from './bind2.css'
 
 interface Props { }
 interface State { }
@@ -9,11 +10,11 @@ export default class extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className={'bind2'}>
+            <div className={style['bind2']}>
                 <h1>双向绑定哟</h1>
                 <form>
-                    <label htmlFor="bind2"/>
-                    <input type="text" id="bind2" name="value" placeholder="输入吧；）"/>
+                    <label htmlFor="bind2" />
+                    <input type="text" id="bind2" name="value" placeholder="输入吧；）" />
                 </form>
                 <p>{''}</p>
             </div>

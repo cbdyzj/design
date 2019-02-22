@@ -1,19 +1,19 @@
-div.bind2 {
+.bind2 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-h1 {
+.bind2 h1 {
     font-size: 5em;
 }
 
-input {
+.bind2 input {
     font-size: 2.5em;
     text-align: center;
 }
 
-p {
+.bind2 p {
     font-size: 2.5em;
 }

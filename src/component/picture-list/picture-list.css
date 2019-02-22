@@ -1,11 +1,11 @@
-div.picture-list {
+.picture-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: snow;
 }
 
-img {
+.picture-list img {
     display: block;
     width: 65%;
     max-width: 30rem;
