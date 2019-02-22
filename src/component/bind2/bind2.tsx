@@ -7,23 +7,9 @@ interface State { }
 
 export default class extends React.Component<Props, State> {
 
-    componentDidMount(): void {
-        const p = document.querySelector('p')
-        const input = document.querySelector('input')
-        input.addEventListener('input', ({ target }) => mo.value = target['value'])
-        const mo = new Proxy({ value: '' }, {
-            set: (target, property, value) => {
-                target[property] = value
-                input.value = value
-                p.innerText = JSON.stringify(target)
-                return true
-            }
-        })
-    }
-
     render() {
         return (
-            <div className="bind2">
+            <div className={'bind2'}>
                 <h1>双向绑定哟</h1>
                 <form>
                     <label htmlFor="bind2"/>
@@ -33,4 +19,19 @@ export default class extends React.Component<Props, State> {
             </div>
         )
     }
+
+    componentDidMount() {
+        const p = document.querySelector('p')
+        const input = document.querySelector('input')
+        const mo = new Proxy({ value: '' }, {
+            set: (target, property, value) => {
+                target[property] = value
+                input.value = value
+                p.innerText = JSON.stringify(target)
+                return true
+            }
+        })
+        input.addEventListener('input', ({ target }) => mo.value = target['value'])
+    }
+
 }

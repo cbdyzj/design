@@ -8,7 +8,7 @@ const config = {
                 use: 'ts-loader',
                 exclude: /node_modules/
             }, {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|jpeg|gif)$/,
                 use: [{ loader: 'file-loader', options: { outputPath: 'assets' } }],
             },
             {

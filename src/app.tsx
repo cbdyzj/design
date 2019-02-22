@@ -4,6 +4,7 @@ import React from "react";
 import Hello from "./component/hello"
 import Main from "./component/main"
 import Bind2 from "./component/bind2/bind2"
+import PictureList from "./component/picture-list/picture-list"
 import './app.css'
 
 export default () => (
@@ -15,6 +16,7 @@ export default () => (
                     <li><Link to="/hi/Ada">Ada</Link></li>
                     <li><Link to="/bind2">Bind2</Link></li>
                     <li><Link to="/main">Main</Link></li>
+                    <li><Link to="/picture-list">PictureList</Link></li>
                 </ul>
             </nav>
             <hr />
@@ -23,6 +25,7 @@ export default () => (
             <Route path="/hi/:name" component={({ match }) => <Hello name={match.params.name} />} />
             <Route path="/main" component={() => <Main />} />
             <Route path="/bind2" component={() => <Bind2 />} />
+            <Route path="/picture-list" component={() => <PictureList />} />
         </div>
     </Router>
 )
