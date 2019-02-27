@@ -1,6 +1,5 @@
 import React from 'react'
 
-// @ts-ignore
 import style from './bind2.css'
 
 interface Props { }

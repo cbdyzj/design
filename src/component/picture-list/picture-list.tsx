@@ -1,8 +1,6 @@
 import React from 'react'
 
-// @ts-ignore
 import style from './picture-list.css'
-// @ts-ignore
 import xmm from './xmm.jpeg'
 
 interface Props { }
