@@ -1,16 +1,20 @@
 import { createStore } from 'redux'
 
 function counter(state, action) {
-    if (typeof state === 'undefined') {
-        state = { count: 0 }
+    switch (action.type) {
+        case 'INCREMENT':
+            return {
+                ...state,
+                count: state.count + 1
+            }
+        case 'DECREMENT':
+            return {
+                ...state,
+                count: state.count - 1
+            }
+        default:
+            return state
     }
-    if (action.type === 'INCREMENT') {
-        return { count: state.count + 1 }
-    }
-    if (action.type === 'DECREMENT') {
-        return { count: state.count - 1 }
-    }
-    return state
 }
 
 const initialState = { count: 100 }
