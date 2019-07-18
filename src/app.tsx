@@ -5,10 +5,11 @@ import './app.css'
 
 import Hello from './component/hello'
 import Bind2 from './component/bind2/bind2'
-import PictureList from './component/picture-list/picture-list'
+import PictureList from './component/picture_list/picture_list'
 import Counter from './component/counter'
+import QuillEditor from './component/quill_editor'
 
-export default function () {
+function App() {
     return (
         <Router>
             <div>
@@ -16,17 +17,21 @@ export default function () {
                     <ul>
                         <li><Link to='/hello'>Hello</Link></li>
                         <li><Link to='/bind2'>Bind2</Link></li>
-                        <li><Link to='/picture-list'>PictureList</Link></li>
+                        <li><Link to='/picture_list'>Picture List</Link></li>
                         <li><Link to='/counter'>Counter</Link></li>
+                        <li><Link to='/quill_editor'>Quill Editor</Link></li>
                     </ul>
                 </nav>
                 <hr />
                 <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
                 <Route path='/hello' component={() => <Hello defaultName="访客" />} />
                 <Route path='/bind2' component={Bind2} />
-                <Route path='/picture-list' component={PictureList} />
+                <Route path='/picture_list' component={PictureList} />
                 <Route path='/counter' component={Counter} />
+                <Route path='/quill_editor' component={QuillEditor} />
             </div>
         </Router>
     )
 }
+
+export default App

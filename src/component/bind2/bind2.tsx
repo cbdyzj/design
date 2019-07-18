@@ -1,26 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import style from './bind2.css'
 
-interface Props { }
-interface State { }
+function Bind2() {
 
-export default class extends React.Component<Props, State> {
-
-    render() {
-        return (
-            <div className={style['bind2']}>
-                <h1>双向绑定哟</h1>
-                <form>
-                    <label htmlFor="bind2" />
-                    <input type="text" id="bind2" name="value" placeholder="输入吧；）" />
-                </form>
-                <p>{''}</p>
-            </div>
-        )
-    }
-
-    componentDidMount() {
+    useEffect(() => {
         const p = document.querySelector('p')
         const input = document.querySelector('input')
         const mo = new Proxy({ value: '' }, {
@@ -32,6 +16,18 @@ export default class extends React.Component<Props, State> {
             }
         })
         input.addEventListener('input', ({ target }) => mo.value = target['value'])
-    }
+    })
 
+    return (
+        <div className={style['bind2']}>
+            <h1>双向绑定哟</h1>
+            <form>
+                <label htmlFor="bind2" />
+                <input type="text" id="bind2" name="value" placeholder="输入吧；）" />
+            </form>
+            <p>{''}</p>
+        </div>
+    )
 }
+
+export default Bind2
