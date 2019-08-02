@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.jianzhao'
+version = '0.0.1'
+sourceCompatibility = 8
+
+task webjar(type: Jar, dependsOn: 'jar') {
+    from(fileTree('dist')) {
+        into 'META-INF/resources'
+    }
+}
