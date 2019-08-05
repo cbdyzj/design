@@ -19,7 +19,7 @@
         <resources>
             <resource>
                 <directory>${project.basedir}/dist</directory>
-                <targetPath>${project.build.outputDirectory}/META-INF/resources/webjars</targetPath>
+                <targetPath>${project.build.outputDirectory}/META-INF/resources</targetPath>
             </resource>
         </resources>
     </build>

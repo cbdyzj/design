@@ -8,7 +8,6 @@ sourceCompatibility = 8
 
 task webjar(type: Jar, dependsOn: 'jar') {
     from(fileTree('dist')) {
-        into '/META-INF/resources/webjars'
-
+        into '/META-INF/resources'
     }
 }
