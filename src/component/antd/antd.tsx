@@ -1,15 +1,26 @@
 import React from 'react'
-import { Button } from 'antd'
+import { Button, Row, message } from 'antd'
+
+import AntTable from './ant_table'
+import AntPagination from './ant_pagination'
 
 function Antd() {
 
-    function onClick() {
-        alert('This is an antd button!')
+    function onClickButton() {
+        message.info('Welcome Ant Design!')
     }
 
     return (
-        <div>
-            <Button onClick={onClick} type="primary">antd Button</Button>
+        <div style={{ width: '60%', margin: 'auto' }}>
+            <Row style={{ textAlign: 'center', margin: '1rem' }}>
+                <Button
+                    onClick={onClickButton}
+                    style={{ width: '60%' }}>
+                    antd Button
+                </Button>
+            </Row>
+            <Row><AntTable /></Row>
+            <Row><AntPagination /></Row>
         </div>
     )
 }
