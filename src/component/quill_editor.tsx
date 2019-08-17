@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, CSSProperties } from 'react'
 import ReactQuill from 'react-quill'
 
 import 'react-quill/dist/quill.snow.css'
 
-const style = {
-    width: '60%',
-    height: '30%'
+const style: CSSProperties = {
+    margin: '1% auto',
+    width: '60vw',
+    height: '50vh',
 }
 
 function QuillEditor() {
@@ -17,8 +18,9 @@ function QuillEditor() {
     }
 
     return (
-        <div style={style}>
+        <div>
             <ReactQuill
+                style={style}
                 value={text}
                 onChange={handleChange} />
         </div>

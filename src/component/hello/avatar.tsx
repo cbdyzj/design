@@ -19,15 +19,14 @@ interface Props {
     style?: CSSProperties
 }
 
-class Avatar extends Component<Props, { count: number }> {
+class Avatar extends Component<Props, {}> {
 
     constructor(props) {
         super(props)
-        this.state = { count: 0 }
     }
 
     logLifecycle(lifecycle) {
-        console.log(lifecycle, this.props.character, this.state.count)
+        console.log(lifecycle, this.props.character)
     }
 
     componentDidMount() {
@@ -42,14 +41,10 @@ class Avatar extends Component<Props, { count: number }> {
         this.logLifecycle('componentWillUnmount')
     }
 
-    handleClick = () => {
-        this.setState(state => ({ count: state.count + 1 }))
-    }
-
     render() {
         const avatarStyle = Object.assign({}, style, this.props.style)
         return (
-            <span style={avatarStyle} onClick={this.handleClick}>
+            <span style={avatarStyle}>
                 {this.props.character || '?'}
             </span>
         )
