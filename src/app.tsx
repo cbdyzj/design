@@ -3,7 +3,7 @@ import React from 'react';
 
 import style from './app.css'
 
-import Hello from './component/hello'
+import Hello from './component/hello/hello'
 import Bind2 from './component/bind2/bind2'
 import PictureList from './component/picture_list/picture_list'
 import Counter from './component/counter'
@@ -27,7 +27,7 @@ function App() {
                     </nav>
                     <hr />
                     <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
-                    <Route path='/hello' component={() => <Hello defaultName="访客" />} />
+                    <Route path='/hello' component={() => <Hello defaultName="你" />} />
                     <Route path='/bind2' component={Bind2} />
                     <Route path='/picture_list' component={PictureList} />
                     <Route path='/counter' component={Counter} />
