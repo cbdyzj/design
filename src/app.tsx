@@ -7,7 +7,7 @@ import Hello from './component/hello/hello'
 import Bind2 from './component/bind2/bind2'
 import PictureList from './component/picture_list/picture_list'
 import Counter from './component/counter'
-import QuillEditor from './component/quill_editor'
+import QuillEditor from './component/quill_editor/quill_editor'
 import Antd from './component/antd/antd'
 
 function App() {
