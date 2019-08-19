@@ -10,7 +10,6 @@ const style: CSSProperties = {
     height: '60vh',
 }
 
-
 function QuillEditor() {
 
     const [text, setText] = useState('')
