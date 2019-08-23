@@ -1,0 +1,16 @@
+.div1 {
+    overflow: scroll;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    display: inline-block;
+    
+}
+
+.div2 {
+    overflow: scroll;
+    width: 100px;
+    height: 100px;
+    background-color: snow;
+    display: inline-block;
+}

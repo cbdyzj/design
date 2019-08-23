@@ -9,6 +9,7 @@ import PictureList from './component/picture_list/picture_list'
 import Counter from './component/counter'
 import QuillEditor from './component/quill_editor/quill_editor'
 import Antd from './component/antd/antd'
+import Layout2 from './component/layout2/layout2'
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                             <li><Link to='/counter'>Counter</Link></li>
                             <li><Link to='/quill_editor'>Quill Editor</Link></li>
                             <li><Link to='/antd'>antd</Link></li>
+                            <li><Link to='/layout2'>Layout2</Link></li>
                         </ul>
                     </nav>
                     <hr />
@@ -33,6 +35,7 @@ function App() {
                     <Route path='/counter' component={Counter} />
                     <Route path='/quill_editor' component={QuillEditor} />
                     <Route path='/antd' component={Antd} />
+                    <Route path='/layout2' component={Layout2} />
                 </div>
             </Router>
         </div>
