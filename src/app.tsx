@@ -1,16 +1,17 @@
 import { HashRouter as Router, Link, Route } from 'react-router-dom'
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 import style from './app.less'
 
-import Hello from './component/hello/hello'
-import Bind2 from './component/bind2/bind2'
-import PictureList from './component/picture_list/picture_list'
-import Counter from './component/counter'
-import QuillEditor from './component/quill_editor/quill_editor'
-import Antd from './component/antd/antd'
-import Layout2 from './component/layout2/layout2'
-import ReactHook from './component/react_hook/react_hook'
+// 懒加载
+const Hello = lazy(() => import(/* webpackChunkName: "hello" */ './component/hello/hello'))
+const Bind2 = lazy(() => import(/* webpackChunkName: "bind2" */ './component/bind2/bind2'))
+const PictureList = lazy(() => import(/* webpackChunkName: "picture_list" */ './component/picture_list/picture_list'))
+const Counter = lazy(() => import(/* webpackChunkName: "counter" */ './component/counter'))
+const QuillEditor = lazy(() => import(/* webpackChunkName: "quill_editor" */ './component/quill_editor/quill_editor'))
+const Antd = lazy(() => import(/* webpackChunkName: "antd" */ './component/antd/antd'))
+const Layout2 = lazy(() => import(/* webpackChunkName: "layout2" */ './component/layout2/layout2'))
+const ReactHook = lazy(() => import(/* webpackChunkName: "react_hook" */ './component/react_hook/react_hook'))
 
 function App() {
     return (
@@ -30,15 +31,17 @@ function App() {
                         </ul>
                     </nav>
                     <hr />
-                    <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
-                    <Route path='/hello' component={() => <Hello defaultName="你" />} />
-                    <Route path='/bind2' component={Bind2} />
-                    <Route path='/picture_list' component={PictureList} />
-                    <Route path='/counter' component={Counter} />
-                    <Route path='/quill_editor' component={QuillEditor} />
-                    <Route path='/antd' component={Antd} />
-                    <Route path='/layout2' component={Layout2} />
-                    <Route path='/react_hook' component={ReactHook} />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
+                        <Route path='/hello' component={() => <Hello defaultName="你" />} />
+                        <Route path='/bind2' component={Bind2} />
+                        <Route path='/picture_list' component={PictureList} />
+                        <Route path='/counter' component={Counter} />
+                        <Route path='/quill_editor' component={QuillEditor} />
+                        <Route path='/antd' component={Antd} />
+                        <Route path='/layout2' component={Layout2} />
+                        <Route path='/react_hook' component={ReactHook} />
+                    </Suspense>
                 </div>
             </Router>
         </div>

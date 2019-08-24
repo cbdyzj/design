@@ -1,8 +1,10 @@
 import React, { useState, CSSProperties } from 'react'
+
 import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
+
 import { Button } from 'antd'
 
-import 'react-quill/dist/quill.snow.css'
 
 const style: CSSProperties = {
     margin: '1%',

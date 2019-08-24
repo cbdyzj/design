@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "esnext",
+        "moduleResolution": "node",
         "esModuleInterop": true,
         "target": "es2017",
         "outDir": "dist",
         "jsx": "react",
-        "allowJs": true,
+        "allowJs": false,
         "lib": [
             "es2017",
             "dom"

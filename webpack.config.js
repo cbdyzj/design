@@ -6,13 +6,11 @@ const config = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
+                use: [{ loader: 'ts-loader' }],
+                exclude: /node_modules/,
             }, {
                 test: /\.(png|jpg|jpeg|gif)$/,
-                use: [
-                    { loader: 'file-loader', options: { outputPath: 'assets' } }
-                ],
+                use: [{ loader: 'file-loader', options: { outputPath: 'assets' } }],
             }, {
                 test: /\.(css|less)$/,
                 use: [
@@ -46,7 +44,12 @@ const config = {
         splitChunks: {
             chunks: 'all',
             automaticNameDelimiter: '_',
-        }
+        },
+    },
+    output: {
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
     mode: 'development',
 }

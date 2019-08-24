@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Pagination, Typography } from 'antd'
+import { Typography, Pagination } from 'antd'
 
 const { Text, Paragraph } = Typography
 
