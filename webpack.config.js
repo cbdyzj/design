@@ -10,18 +10,25 @@ const config = {
                 exclude: /node_modules/
             }, {
                 test: /\.(png|jpg|jpeg|gif)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: { outputPath: 'assets' }
-                }],
+                use: [
+                    { loader: 'file-loader', options: { outputPath: 'assets' } }
+                ],
             }, {
-                test: /\.css$/,
-                use: [{ loader: 'style-loader' }, { loader: 'css-loader', options: { modules: true } }],
+                test: /\.(css|less)$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader', options: { modules: true } },
+                    { loader: 'less-loader' },
+                ],
                 exclude: [path.resolve(__dirname, 'node_modules')]
             },
             {
-                test: /\.css$/,
-                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+                test: /\.(css|less)$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                    { loader: 'less-loader' },
+                ],
                 include: [path.resolve(__dirname, 'node_modules')]
             }
         ]
@@ -35,6 +42,12 @@ const config = {
             favicon: 'favicon.ico',
         })
     ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            automaticNameDelimiter: '_',
+        }
+    },
     mode: 'development',
 }
 
