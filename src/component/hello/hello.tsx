@@ -11,14 +11,20 @@ function Hello(props: Props) {
     const [name, setName] = useState(defaultName)
 
     function handleChange({ target }) {
-        const val: string = target.value
-        setName(val.length ? val[0] : '')
+        setName(target.value)
+    }
+
+    function handleBlur() {
+        setName(name.length ? name[0] : '')
     }
 
     return (
         <div style={{ padding: '25px' }}>
             <h2>你好哇，<Avatar character={name} />！</h2>
-            <input type="text" value={name} onChange={handleChange} />
+            <input type="text"
+                value={name}
+                onBlur={handleBlur}
+                onChange={handleChange} />
             <CountButton />
         </div>
     )

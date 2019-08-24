@@ -1,25 +1,20 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-class CountButton extends Component<{}, { count: number }> {
+function CountButton() {
 
-    constructor(props) {
-        super(props)
-        this.state = { count: 0 }
+    const [count, setCount] = useState(0)
+
+    function handleOnClick() {
+        setCount(prevCount => prevCount + 1)
     }
 
-    handleOnClick = () => {
-        this.setState(state => ({ count: state.count + 1 }))
-    }
-
-    render() {
-        return (
-            <div style={{ margin: '20px 0' }}>
-                <button onClick={this.handleOnClick}>
-                    Clicked {this.state.count}
-                </button>
-            </div>
-        )
-    }
+    return (
+        <div style={{ margin: '20px 0' }}>
+            <button onClick={handleOnClick}>
+                Clicked {count}
+            </button>
+        </div>
+    )
 }
 
 export default CountButton

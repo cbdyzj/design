@@ -19,36 +19,14 @@ interface Props {
     style?: CSSProperties
 }
 
-class Avatar extends Component<Props, {}> {
+function Avatar(props: Props) {
 
-    constructor(props) {
-        super(props)
-    }
-
-    logLifecycle(lifecycle) {
-        console.log(lifecycle, this.props.character)
-    }
-
-    componentDidMount() {
-        this.logLifecycle('componentDidMount')
-    }
-
-    componentDidUpdate(prevProps) {
-        this.logLifecycle('componentDidUpdate')
-    }
-
-    componentWillUnmount() {
-        this.logLifecycle('componentWillUnmount')
-    }
-
-    render() {
-        const avatarStyle = Object.assign({}, style, this.props.style)
-        return (
-            <span style={avatarStyle}>
-                {this.props.character || '?'}
-            </span>
-        )
-    }
+    const avatarStyle = Object.assign({}, style, props.style)
+    return (
+        <span style={avatarStyle}>
+            {props.character || '?'}
+        </span>
+    )
 }
 
 export default Avatar
