@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import Avatar from './avatar'
 import CountButton from './count_button'
 
-function Hello({ defaultName }: { defaultName: string }) {
+interface Props {
+    defaultName: string
+}
 
+function Hello(props: Props) {
+    const { defaultName } = props
     const [name, setName] = useState(defaultName)
 
     function handleChange({ target }) {

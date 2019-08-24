@@ -10,6 +10,7 @@ import Counter from './component/counter'
 import QuillEditor from './component/quill_editor/quill_editor'
 import Antd from './component/antd/antd'
 import Layout2 from './component/layout2/layout2'
+import ReactHook from './component/react_hook/react_hook'
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                             <li><Link to='/quill_editor'>Quill Editor</Link></li>
                             <li><Link to='/antd'>antd</Link></li>
                             <li><Link to='/layout2'>Layout2</Link></li>
+                            <li><Link to='/react_hook'>React hook</Link></li>
                         </ul>
                     </nav>
                     <hr />
@@ -36,6 +38,7 @@ function App() {
                     <Route path='/quill_editor' component={QuillEditor} />
                     <Route path='/antd' component={Antd} />
                     <Route path='/layout2' component={Layout2} />
+                    <Route path='/react_hook' component={ReactHook} />
                 </div>
             </Router>
         </div>
