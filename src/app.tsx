@@ -1,7 +1,7 @@
 import { HashRouter as Router, Link, Route } from 'react-router-dom'
 import React from 'react';
 
-import style from './app.css'
+import style from './app.less'
 
 import Hello from './component/hello/hello'
 import Bind2 from './component/bind2/bind2'
