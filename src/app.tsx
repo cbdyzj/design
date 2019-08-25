@@ -2,16 +2,30 @@ import { HashRouter as Router, Link, Route } from 'react-router-dom'
 import React, { Suspense, lazy } from 'react';
 
 import style from './app.less'
+import { delay } from './util/schedule'
+
+import { Spin } from 'antd'
 
 // 懒加载
-const Hello = lazy(() => import(/* webpackChunkName: "hello" */ './component/hello/hello'))
-const Bind2 = lazy(() => import(/* webpackChunkName: "bind2" */ './component/bind2/bind2'))
-const PictureList = lazy(() => import(/* webpackChunkName: "picture_list" */ './component/picture_list/picture_list'))
-const Counter = lazy(() => import(/* webpackChunkName: "counter" */ './component/counter'))
-const QuillEditor = lazy(() => import(/* webpackChunkName: "quill_editor" */ './component/quill_editor/quill_editor'))
-const Antd = lazy(() => import(/* webpackChunkName: "antd" */ './component/antd/antd'))
-const Layout2 = lazy(() => import(/* webpackChunkName: "layout2" */ './component/layout2/layout2'))
-const ReactHook = lazy(() => import(/* webpackChunkName: "react_hook" */ './component/react_hook/react_hook'))
+const Hello = lazy(() => import('./component/hello/hello'))
+const Bind2 = lazy(() => import('./component/bind2/bind2'))
+const PictureList = lazy(() => import('./component/picture_list/picture_list'))
+const Counter = lazy(() => import('./component/counter'))
+const QuillEditor = lazy(() => import('./component/quill_editor/quill_editor'))
+const Antd = lazy(() => import('./component/antd/antd').then(delay(1)))
+const Layout2 = lazy(() => import('./component/layout2/layout2'))
+const ReactHook = lazy(() => import('./component/react_hook/react_hook'))
+
+function Loading() {
+    const style = {
+        width: '100%',
+        minHeight: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+    return (<div style={style}><Spin size="large" /></div>)
+}
 
 function App() {
     return (
@@ -31,7 +45,7 @@ function App() {
                         </ul>
                     </nav>
                     <hr />
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Loading />}>
                         <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
                         <Route path='/hello' component={() => <Hello defaultName="你" />} />
                         <Route path='/bind2' component={Bind2} />

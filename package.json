@@ -6,8 +6,6 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
-    "serve": "ts-node serve.ts",
-    "proxy": "ts-node proxy.ts",
     "clean": "rm -rf dist"
   },
   "repository": {
