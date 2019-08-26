@@ -10,7 +10,7 @@ import { Spin } from 'antd'
 const Hello = lazy(() => import('./component/hello/hello'))
 const Bind2 = lazy(() => import('./component/bind2/bind2'))
 const PictureList = lazy(() => import('./component/picture_list/picture_list'))
-const Counter = lazy(() => import('./component/counter'))
+const ReduxPage = lazy(() => import('./component/redux/redux_page'))
 const QuillEditor = lazy(() => import('./component/quill_editor/quill_editor'))
 const Antd = lazy(() => import('./component/antd/antd').then(delay(1)))
 const Layout2 = lazy(() => import('./component/layout2/layout2'))
@@ -37,7 +37,7 @@ function App() {
                             <li><Link to='/hello'>Hello</Link></li>
                             <li><Link to='/bind2'>Bind2</Link></li>
                             <li><Link to='/picture_list'>Picture List</Link></li>
-                            <li><Link to='/counter'>Counter</Link></li>
+                            <li><Link to='/redux_page'>Redux page</Link></li>
                             <li><Link to='/quill_editor'>Quill Editor</Link></li>
                             <li><Link to='/antd'>antd</Link></li>
                             <li><Link to='/layout2'>Layout2</Link></li>
@@ -50,7 +50,7 @@ function App() {
                         <Route path='/hello' component={() => <Hello defaultName="你" />} />
                         <Route path='/bind2' component={Bind2} />
                         <Route path='/picture_list' component={PictureList} />
-                        <Route path='/counter' component={Counter} />
+                        <Route path='/redux_page' component={ReduxPage} />
                         <Route path='/quill_editor' component={QuillEditor} />
                         <Route path='/antd' component={Antd} />
                         <Route path='/layout2' component={Layout2} />
