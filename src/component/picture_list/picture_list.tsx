@@ -7,7 +7,7 @@ function PictureList() {
     return (
         <div className={style['picture-list']}>
             <h1>Picture List</h1>
-            <img src={xmm} alt={'小猫咪'} />
+            <img src={xmm} alt="小猫咪" />
         </div>
     )
 }

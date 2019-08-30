@@ -24,8 +24,8 @@ function AntTable() {
             dataSource={tableData}
             onChange={() => { }}
             columns={tableColumns}
-            size={'small'}
-            rowKey={'id'} />
+            size="small"
+            rowKey="id" />
     )
 }
 
