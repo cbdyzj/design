@@ -1,5 +1,5 @@
 import { HashRouter as Router, Link, Route } from 'react-router-dom'
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react'
 
 import style from './app.less'
 import { delay } from './util/schedule'
