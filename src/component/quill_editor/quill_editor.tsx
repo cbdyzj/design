@@ -1,4 +1,4 @@
-import React, { useState, CSSProperties } from 'react'
+import React, { useState, CSSProperties, useRef } from 'react'
 
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
@@ -15,23 +15,21 @@ const style: CSSProperties = {
 function QuillEditor() {
 
     const [text, setText] = useState('')
-    const [selectionRange, setSelectionRange] = useState(null)
-    const [quillRef, setQuillRef] = useState(null)
+    const selectionRange = useRef(null)
+    const quillRef = useRef(null as ReactQuill)
 
     function handleChange(value) {
         setText(value)
     }
 
     function changeSelection(range) {
-        if (range) {
-            setSelectionRange(range)
-        }
+        selectionRange.current = range
     }
 
     function handleClick() {
-        if (selectionRange) {
-            const editor = quillRef.getEditor()
-            const { index, length } = selectionRange
+        if (selectionRange.current) {
+            const editor = quillRef.current.getEditor()
+            const { index, length } = selectionRange.current
             const text = editor.getText(index, length)
             editor.deleteText(index, length)
             editor.insertText(index, `"${text}"`)
@@ -41,7 +39,7 @@ function QuillEditor() {
     return (
         <div>
             <ReactQuill
-                ref={ref => setQuillRef(ref)}
+                ref={quillRef}
                 style={style}
                 value={text}
                 onChangeSelection={changeSelection}
