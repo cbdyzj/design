@@ -5,7 +5,6 @@ import { Typography, Pagination } from 'antd'
 const { Text, Paragraph } = Typography
 
 function AntPagination() {
-
     const [mark, setMark] = useState('分页器')
 
     function onChangePagination(page, pageSize) {
@@ -24,7 +23,8 @@ function AntPagination() {
                 pageSizeOptions={['7', '17', '27']}
                 defaultPageSize={7}
                 size={'small'}
-                total={70} />
+                total={70}
+            />
         </div>
     )
 }

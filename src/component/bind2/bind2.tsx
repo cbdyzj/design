@@ -3,19 +3,21 @@ import React, { useEffect } from 'react'
 import style from './bind2.css'
 
 function Bind2() {
-
     useEffect(() => {
         const p = document.querySelector('p')
         const input = document.querySelector('input')
-        const mo = new Proxy({ value: '' }, {
-            set: (target, property, value) => {
-                target[property] = value
-                input.value = value
-                p.innerText = JSON.stringify(target)
-                return true
+        const mo = new Proxy(
+            { value: '' },
+            {
+                set: (target, property, value) => {
+                    target[property] = value
+                    input.value = value
+                    p.innerText = JSON.stringify(target)
+                    return true
+                },
             }
-        })
-        input.addEventListener('input', ({ target }) => mo.value = target['value'])
+        )
+        input.addEventListener('input', ({ target }) => (mo.value = target['value']))
     })
 
     return (

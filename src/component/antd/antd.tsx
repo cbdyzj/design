@@ -6,7 +6,6 @@ import AntTable from './ant_table'
 import AntPagination from './ant_pagination'
 
 function Antd() {
-
     function onClickButton() {
         message.info('Welcome Ant Design!')
     }
@@ -14,14 +13,16 @@ function Antd() {
     return (
         <div style={{ width: '60%', margin: 'auto' }}>
             <Row style={{ textAlign: 'center', margin: '1rem' }}>
-                <Button
-                    onClick={onClickButton}
-                    style={{ width: '60%' }}>
+                <Button onClick={onClickButton} style={{ width: '60%' }}>
                     antd Button
                 </Button>
             </Row>
-            <Row><AntTable /></Row>
-            <Row><AntPagination /></Row>
+            <Row>
+                <AntTable />
+            </Row>
+            <Row>
+                <AntPagination />
+            </Row>
         </div>
     )
 }

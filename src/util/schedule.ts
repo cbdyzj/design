@@ -1,13 +1,13 @@
 export function sleep(ms) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         setTimeout(() => {
             resolve()
-        }, ms);
+        }, ms)
     })
 }
 
 export function delay(seconds) {
-    return async (result) => {
+    return async result => {
         await sleep(seconds * 1000)
         return result
     }

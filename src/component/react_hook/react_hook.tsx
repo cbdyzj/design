@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react'
 
 function ReactHook(props) {
-
     const now = new Date().toISOString()
     const [info, setInfo] = useState('?')
 

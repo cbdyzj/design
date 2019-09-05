@@ -11,7 +11,7 @@ const style: CSSProperties = {
     display: 'inline-block',
     textAlign: 'center',
     lineHeight: '30px',
-    margin: '1px'
+    margin: '1px',
 }
 
 interface Props {
@@ -20,13 +20,8 @@ interface Props {
 }
 
 function Avatar(props: Props) {
-
     const avatarStyle = Object.assign({}, style, props.style)
-    return (
-        <span style={avatarStyle}>
-            {props.character || '?'}
-        </span>
-    )
+    return <span style={avatarStyle}>{props.character || '?'}</span>
 }
 
 export default Avatar

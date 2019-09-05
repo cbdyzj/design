@@ -22,9 +22,13 @@ function Loading() {
         minHeight: '60vh',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
-    return (<div style={style}><Spin size="large" /></div>)
+    return (
+        <div style={style}>
+            <Spin size="large" />
+        </div>
+    )
 }
 
 function App() {
@@ -34,27 +38,43 @@ function App() {
                 <div>
                     <nav>
                         <ul>
-                            <li><Link to='/hello'>Hello</Link></li>
-                            <li><Link to='/bind2'>Bind2</Link></li>
-                            <li><Link to='/picture_list'>Picture List</Link></li>
-                            <li><Link to='/redux_page'>Redux page</Link></li>
-                            <li><Link to='/quill_editor'>Quill Editor</Link></li>
-                            <li><Link to='/antd'>antd</Link></li>
-                            <li><Link to='/layout2'>Layout2</Link></li>
-                            <li><Link to='/react_hook'>React hook</Link></li>
+                            <li>
+                                <Link to="/hello">Hello</Link>
+                            </li>
+                            <li>
+                                <Link to="/bind2">Bind2</Link>
+                            </li>
+                            <li>
+                                <Link to="/picture_list">Picture List</Link>
+                            </li>
+                            <li>
+                                <Link to="/redux_page">Redux page</Link>
+                            </li>
+                            <li>
+                                <Link to="/quill_editor">Quill Editor</Link>
+                            </li>
+                            <li>
+                                <Link to="/antd">antd</Link>
+                            </li>
+                            <li>
+                                <Link to="/layout2">Layout2</Link>
+                            </li>
+                            <li>
+                                <Link to="/react_hook">React hook</Link>
+                            </li>
                         </ul>
                     </nav>
                     <hr />
                     <Suspense fallback={<Loading />}>
-                        <Route path='/' exact render={() => <h1>Hello! Hello!</h1>} />
-                        <Route path='/hello' component={() => <Hello defaultName="你" />} />
-                        <Route path='/bind2' component={Bind2} />
-                        <Route path='/picture_list' component={PictureList} />
-                        <Route path='/redux_page' component={ReduxPage} />
-                        <Route path='/quill_editor' component={QuillEditor} />
-                        <Route path='/antd' component={Antd} />
-                        <Route path='/layout2' component={Layout2} />
-                        <Route path='/react_hook' component={ReactHook} />
+                        <Route path="/" exact render={() => <h1>Hello! Hello!</h1>} />
+                        <Route path="/hello" component={() => <Hello defaultName="你" />} />
+                        <Route path="/bind2" component={Bind2} />
+                        <Route path="/picture_list" component={PictureList} />
+                        <Route path="/redux_page" component={ReduxPage} />
+                        <Route path="/quill_editor" component={QuillEditor} />
+                        <Route path="/antd" component={Antd} />
+                        <Route path="/layout2" component={Layout2} />
+                        <Route path="/react_hook" component={ReactHook} />
                     </Suspense>
                 </div>
             </Router>

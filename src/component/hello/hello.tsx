@@ -20,11 +20,11 @@ function Hello(props: Props) {
 
     return (
         <div style={{ padding: '25px' }}>
-            <h2>你好哇，<Avatar character={name} />！</h2>
-            <input type="text"
-                value={name}
-                onBlur={handleBlur}
-                onChange={handleChange} />
+            <h2>
+                你好哇，
+                <Avatar character={name} />！
+            </h2>
+            <input type="text" value={name} onBlur={handleBlur} onChange={handleChange} />
             <CountButton />
         </div>
     )

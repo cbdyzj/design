@@ -11,7 +11,7 @@ const style = {
     outline: 'none',
     color: 'white',
     fontSize: '17px',
-    margin: '0 .5em'
+    margin: '0 .5em',
 }
 
 function PageTurner(props) {
@@ -27,8 +27,12 @@ function PageTurner(props) {
 
     return (
         <div>
-            <button style={style} onClick={decrement}>上一页</button>
-            <button style={style} onClick={increment}>下一页</button>
+            <button style={style} onClick={decrement}>
+                上一页
+            </button>
+            <button style={style} onClick={increment}>
+                下一页
+            </button>
         </div>
     )
 }

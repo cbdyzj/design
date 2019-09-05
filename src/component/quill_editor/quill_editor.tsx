@@ -5,7 +5,6 @@ import 'react-quill/dist/quill.snow.css'
 
 import { Button } from 'antd'
 
-
 const style: CSSProperties = {
     margin: '1%',
     width: '60vw',
@@ -13,7 +12,6 @@ const style: CSSProperties = {
 }
 
 function QuillEditor() {
-
     const [text, setText] = useState('')
     const selectionRange = useRef(null)
     const quillRef = useRef(null as ReactQuill)
@@ -43,7 +41,8 @@ function QuillEditor() {
                 style={style}
                 value={text}
                 onChangeSelection={changeSelection}
-                onChange={handleChange} />
+                onChange={handleChange}
+            />
             <Button style={{ marginLeft: '62vw' }} onClick={handleClick}>
                 按钮
             </Button>
