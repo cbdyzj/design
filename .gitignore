@@ -13,3 +13,4 @@ dist/
 npm-debug.log*
 target/
 .gradle/
+*.iml
