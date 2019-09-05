@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "serve": "node serve.js",
     "clean": "rm -rf dist",
-    "prettier":"prettier --write src/**/*.ts src/**/*.tsx"
+    "prettier": "prettier --write src/**/*.ts src/**/*.tsx src/**/*.css src/**/*.less"
   },
   "repository": {
     "type": "git",
