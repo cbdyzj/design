@@ -8,6 +8,10 @@ function AntTable() {
         return <Button onClick={infoContent}>操作</Button>
     }
 
+    function dumb() {
+        // do nothing
+    }
+
     const tableColumns = [
         { title: 'ID', dataIndex: 'id', key: 'id' },
         { title: '内容', dataIndex: 'content', key: 'content' },
@@ -21,7 +25,7 @@ function AntTable() {
             pagination={false}
             style={{ margin: '1rem' }}
             dataSource={tableData}
-            onChange={() => {}}
+            onChange={dumb}
             columns={tableColumns}
             size="small"
             rowKey="id"
