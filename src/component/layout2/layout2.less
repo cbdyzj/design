@@ -1,18 +1,25 @@
 .layout2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    overflow: scroll;
 
     :global {
-        .container {
+        .hole {
             overflow: scroll;
-            width: 45%;
-            height: 50vh;
-            display: inline-block;
+            width: 10%;
+            height: 10vh;
+            display: block;
             background-color: #66ccff;
             border-radius: 5px;
+            margin: 20px auto;
         }
+        .extract {
+            padding: 5px;
+            display: block;
+            background-color: ghostwhite;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 60%;
+            height: calc(8em + 5px);
+            overflow: hidden;
+        }
+
     }
 }
