@@ -6,7 +6,7 @@ const hiddenStyle: { height?: string } = {
 
 const [openText, closeText] = ['展开全部 ↓', '收起 ↑']
 
-export default function Extract(props) {
+function Extract(props) {
 
     const [extraStype, setExtraStype] = useState(hiddenStyle)
     const [switchText, setSwitchText] = useState(openText)
@@ -33,3 +33,5 @@ export default function Extract(props) {
         </div>
     )
 }
+
+export default Extract

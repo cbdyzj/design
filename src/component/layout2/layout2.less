@@ -1,3 +1,14 @@
+.t-ellipsis(@lines) {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: box;
+    display: -webkit-box;
+    -webkit-line-clamp: @lines;
+    /*! autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+}
+
 .layout2 {
 
     :global {
@@ -25,6 +36,9 @@
             float: right;
             margin: .1em;
         }
-
+        .mlt {
+            .t-ellipsis(3);
+        }
     }
 }
+
