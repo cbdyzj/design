@@ -15,6 +15,7 @@ const QuillEditor = lazy(() => import('./component/quill_editor/quill_editor'))
 const Antd = lazy(() => import('./component/antd/antd').then(delay(1)))
 const Layout2 = lazy(() => import('./component/layout2/layout2'))
 const ReactHook = lazy(() => import('./component/react_hook/react_hook'))
+const Tools = lazy(() => import('./component/tools/tools'))
 
 function Loading() {
     const style = {
@@ -62,6 +63,9 @@ function App() {
                             <li>
                                 <Link to="/react_hook">React hook</Link>
                             </li>
+                            <li>
+                                <Link to="/tools">Tools</Link>
+                            </li>
                         </ul>
                     </nav>
                     <hr />
@@ -75,6 +79,7 @@ function App() {
                         <Route path="/antd" component={Antd} />
                         <Route path="/layout2" component={Layout2} />
                         <Route path="/react_hook" component={ReactHook} />
+                        <Route path="/tools" component={Tools} />
                     </Suspense>
                 </div>
             </Router>

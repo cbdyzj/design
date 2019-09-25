@@ -1,0 +1,36 @@
+.tooltip-ref {
+  display: inline-block;
+  margin: 50px 80px;
+}
+
+:global {
+
+  .tooltip {
+    border-color: #404040;
+    background: #404040;
+    color: #FFF;
+    width: 150px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .tooltip .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+  }
+
+  .tooltip-arrow {
+    border-width: 5px 5px 0 5px;
+    border-top-color: #404040;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    bottom: -10px;
+  }
+}
