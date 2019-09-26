@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node serve.js",
+    "start": "webpack-dev-server",
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server",
+    "serve": "yarn build && node serve.js",
     "clean": "rm -rf dist",
     "prettier": "prettier --write src/**/*.ts src/**/*.tsx src/**/*.css src/**/*.less"
   },

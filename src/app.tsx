@@ -1,4 +1,4 @@
-import { HashRouter as Router, Link, Route } from 'react-router-dom'
+import { HashRouter as Router, Link, Route,Redirect } from 'react-router-dom'
 import React, { Suspense, lazy } from 'react'
 
 import style from './app.less'
@@ -70,7 +70,7 @@ function App() {
                     </nav>
                     <hr />
                     <Suspense fallback={<Loading />}>
-                        <Route path="/" exact render={() => <h1>Hello! Hello!</h1>} />
+                        <Route path="/" exact render={() => <Redirect to="/hello" />} />
                         <Route path="/hello" component={() => <Hello defaultName="你" />} />
                         <Route path="/bind2" component={Bind2} />
                         <Route path="/picture_list" component={PictureList} />
