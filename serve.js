@@ -1,7 +1,6 @@
 const http = require('http')
 const Koa = require('koa')
 const send = require('koa-send')
-const logger = require('koa-logger')
 
 function serve(ctx) {
     let { path } = ctx
@@ -12,7 +11,6 @@ function serve(ctx) {
 }
 
 const app = new Koa
-app.use(logger())
 app.use(serve)
 
 http.createServer(app.callback()).listen(3000)
