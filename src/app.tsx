@@ -7,15 +7,15 @@ import { delay } from './util/schedule'
 import { Spin } from 'antd'
 
 // 懒加载
-const Hello = lazy(() => import('./component/hello/hello'))
-const Bind2 = lazy(() => import('./component/bind2/bind2'))
-const PictureList = lazy(() => import('./component/picture_list/picture_list'))
-const ReduxPage = lazy(() => import('./component/redux/redux_page'))
-const QuillEditor = lazy(() => import('./component/quill_editor/quill_editor'))
-const Antd = lazy(() => import('./component/antd/antd').then(delay(1)))
-const Layout2 = lazy(() => import('./component/layout2/layout2'))
-const ReactHook = lazy(() => import('./component/react_hook/react_hook'))
-const Tools = lazy(() => import('./component/tools/tools'))
+const Hello = lazy(() => import('./pages/hello/hello'))
+const Bind2 = lazy(() => import('./pages/bind2/bind2'))
+const PictureList = lazy(() => import('./pages/picture_list/picture_list'))
+const ReduxPage = lazy(() => import('./pages/redux/redux_page'))
+const QuillEditor = lazy(() => import('./pages/quill_editor/quill_editor'))
+const Antd = lazy(() => import('./pages/antd/antd').then(delay(1)))
+const Layout2 = lazy(() => import('./pages/layout2/layout2'))
+const ReactHook = lazy(() => import('./pages/react_hook/react_hook'))
+const Tools = lazy(() => import('./pages/tools/tools'))
 
 function Loading() {
     const style = {

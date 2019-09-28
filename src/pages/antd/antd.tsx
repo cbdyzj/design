@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Button, Row, message } from 'antd'
 
-import AntTable from './ant_table'
-import AntPagination from './ant_pagination'
+import AntTable from '../../components/antd/ant_table'
+import AntPagination from '../../components/antd/ant_pagination'
 
 function Antd() {
     function onClickButton() {

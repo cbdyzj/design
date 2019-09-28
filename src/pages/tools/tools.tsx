@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Tooltip from 'tooltip.js'
 
-import style from './tools.less'
+import style from './style.less'
 
 function Tools() {
 
