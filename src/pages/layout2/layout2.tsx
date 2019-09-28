@@ -5,13 +5,17 @@ import style from './style.less'
 
 function Layout2() {
     return (
-        <div>
+        <div className={style.layout2}>
             <div className={style.hole}>
-                <pre>
-                    {`${'div '.repeat(20)}\n`.repeat(20)}
-                </pre>
+                <p>{'1 '.repeat(20)}</p>
+                <p>{'2 '.repeat(20)}</p>
+                <p>{'3 '.repeat(20)}</p>
+                <p>{'4 '.repeat(20)}</p>
+                <p>{'5 '.repeat(20)}</p>
+                <p>{'6 '.repeat(20)}</p>
+                <p>{'7 '.repeat(20)}</p>
             </div>
-            <Extract/>
+            <Extract className={style.extract}/>
         </div>
     )
 }

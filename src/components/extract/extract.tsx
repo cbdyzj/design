@@ -24,7 +24,8 @@ function Extract(props) {
     }
 
     return (
-        <div className="extract-container" >
+        <div className={'extract-container ' + props.className}
+             style={Object.assign({}, props.style)}>
             <div className="extract" style={extraStyle}>
                 <p>摩尔根是第一个具有专门知识而尝试给人类的史前史建立一个确定的系统的人；他所提出的分期法，在没有大量增加的资料认为需要改变以前，无疑依旧是有效的。</p>
                 <p>在三个主要时代——蒙昧时代、野蛮时代和文明时代中，不消说，他所研究的只是前两个时代以及向第三个时代的过渡。他根据生活资料生产的进步，又把这两个时代中的每一时代分为低级阶段、中级阶段和高级阶段，因为，他说：</p>
