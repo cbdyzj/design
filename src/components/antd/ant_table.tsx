@@ -23,6 +23,7 @@ function AntTable() {
     function changeOrder(id, ev) {
        const task =  setTimeout(() => {
             setData(data => {
+                changeQueue.current.delete(id)
                 return data.map(it => {
                     if(it.id === id){
                         it.sort = ev
