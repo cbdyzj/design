@@ -107,9 +107,6 @@ function AntTable() {
     return (
         <div>
             <Button
-                onClick={() => message.info('导入')}
-                className={style.export}>导入</Button>
-            <Button
                 onClick={exportFile}
                 className={style.export}>导出</Button>
             <Table
