@@ -6,8 +6,6 @@ const {Dragger} = Upload
 
 import style from './style.less'
 import {importExcelFile} from '../../util/excel'
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 function Tools() {
 

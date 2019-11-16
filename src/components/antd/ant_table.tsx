@@ -3,6 +3,7 @@ import React, {useRef, useState} from 'react'
 import {Button, Table, Modal, InputNumber, Popconfirm, message} from 'antd'
 
 import style from './style.less'
+import {exportExcelFile} from '../../util/excel'
 
 const defaultTableData = Array.from({length: 7}).map((_, i) => ({
     id: i,
@@ -99,7 +100,11 @@ function AntTable() {
     }
 
     function exportFile() {
-        alert(JSON.stringify(selectedTableRows))
+        const exportData = [['ID', '内容', '排序']]
+        selectedTableRows.forEach(it => {
+            exportData.push([it.id, it.content, it.sort])
+        })
+        exportExcelFile([{name: 'test', data: exportData}])
         setSelectedTableRowKeys([])
         setSelectedTableRows([])
     }
