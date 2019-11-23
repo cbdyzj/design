@@ -1,25 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react'
-import Tooltip from 'tooltip.js'
+import React, {useState} from 'react'
 import {Upload, Icon, message, Checkbox} from 'antd'
 
 const {Dragger} = Upload
 
-import style from './style.less'
 import {importExcelFile} from '../../util/excel'
 
 function Tools() {
-
-    const buttonRef = useRef()
-
-    useEffect(() => {
-        const tooltip = new Tooltip(buttonRef.current, {
-            trigger: 'hover focus',
-            placement: 'top',
-            title: 'hello tooltip!',
-            arrowSelector: '.tooltip-arrow'
-        })
-    }, [])
-
 
     const draggerConfig = {
         accept: '.xlsx',
@@ -30,9 +16,10 @@ function Tools() {
                         message.info('导入成功: ' + sheet.name)
                         console.log(sheet.name, sheet.data)
                     }
-                }).catch(error => {
-                console.error(error)
-            })
+                })
+                .catch(error => {
+                    console.error(error)
+                })
             return false
         },
     }
@@ -43,31 +30,30 @@ function Tools() {
         setChecked(ev)
     }
 
+    function includeItem(items: string[]) {
+        return items.some(it => checked.includes(it))
+    }
+
     return (
         <div>
-            <a className={style['tooltip-ref']} ref={buttonRef}>
-                tooltip
-            </a>
-            <hr/>
             <div style={{width: '20vw', margin: '32px 0 0 24px'}}>
                 <Dragger {...draggerConfig}>
                     <p className="ant-upload-drag-icon">
                         <Icon type="inbox"/>
                     </p>
-                    <p className="ant-upload-text">Click or drag file to this area to upload</p>
+                    <p className="ant-upload-text">Click or drag to upload</p>
                     <p className="ant-upload-hint">
-                        Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-                        band files
+                        Support for a single or bulk upload.
                     </p>
                 </Dragger>
             </div>
             <Checkbox.Group
                 style={{margin: '32px 0 0 24px'}}
                 onChange={handleCheckboxChange}>
-                <Checkbox disabled={checked.includes('C') || checked.includes('D')} value={'A'}>A</Checkbox>
-                <Checkbox disabled={checked.includes('C') || checked.includes('D')} value={'B'}>B</Checkbox>
-                <Checkbox disabled={checked.includes('A') || checked.includes('B')} value={'C'}>C</Checkbox>
-                <Checkbox disabled={checked.includes('A') || checked.includes('B')} value={'D'}>D</Checkbox>
+                <Checkbox disabled={includeItem(['C', 'D'])} value={'A'}>A</Checkbox>
+                <Checkbox disabled={includeItem(['C', 'D'])} value={'B'}>B</Checkbox>
+                <Checkbox disabled={includeItem(['A', 'B'])} value={'C'}>C</Checkbox>
+                <Checkbox disabled={includeItem(['A', 'B'])} value={'D'}>D</Checkbox>
             </Checkbox.Group>
         </div>
     )

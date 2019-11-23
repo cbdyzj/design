@@ -60,6 +60,7 @@ export default function SuggestInput(props) {
 
     return (
         <Select
+            allowClear
             showSearch
             showArrow={false}
             filterOption={false}
