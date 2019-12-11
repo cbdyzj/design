@@ -4,6 +4,7 @@ import {Upload, Icon, message, Checkbox} from 'antd'
 const {Dragger} = Upload
 
 import {importExcelFile} from '../../util/excel'
+import SlowInput from "../../components/slow_input/slow_input";
 
 function Tools() {
 
@@ -55,6 +56,9 @@ function Tools() {
                 <Checkbox disabled={includeItem(['A', 'B'])} value={'C'}>C</Checkbox>
                 <Checkbox disabled={includeItem(['A', 'B'])} value={'D'}>D</Checkbox>
             </Checkbox.Group>
+            <div style={{margin: '24px'}}>
+                <SlowInput/>
+            </div>
         </div>
     )
 }
