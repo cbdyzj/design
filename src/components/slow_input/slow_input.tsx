@@ -1,13 +1,7 @@
 import React, {useState} from "react";
 
-export default function SlowInput(props) {
 
-    const [val, setVal] = useState('')
-
-    function handleInputChange(ev) {
-        setVal(ev.target.value)
-    }
-
+function slowTask(val) {
     console.time('long-running')
     const fakeArray = []
     const TIMES = 10_000_000
@@ -16,6 +10,19 @@ export default function SlowInput(props) {
         if (i === TIMES - 1) {
             console.timeEnd('long-running')
         }
+    }
+}
+
+export default function SlowInput(props: { slow?: boolean }) {
+
+    const [val, setVal] = useState('')
+
+    function handleInputChange(ev) {
+        setVal(ev.target.value)
+    }
+
+    if (props.slow) {
+        slowTask(val)
     }
 
     return (

@@ -57,7 +57,7 @@ function Tools() {
                 <Checkbox disabled={includeItem(['A', 'B'])} value={'D'}>D</Checkbox>
             </Checkbox.Group>
             <div style={{margin: '24px'}}>
-                <SlowInput/>
+                <SlowInput slow/>
             </div>
         </div>
     )
