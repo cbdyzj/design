@@ -45,6 +45,10 @@ const config = {
             automaticNameDelimiter: '_',
         },
     },
+    entry: {
+        index: './src/index.tsx',
+        avatar: './src/components/avatar/avatar.tsx',
+    },
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
