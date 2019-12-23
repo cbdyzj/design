@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Row, message } from 'antd'
+import {Button, Row, message, Select} from 'antd'
 
 import AntTable from '../../components/antd/ant_table'
 import AntPagination from '../../components/antd/ant_pagination'
@@ -11,22 +11,38 @@ function Antd() {
         message.info('Welcome Ant Design!')
     }
 
+    const localeList = ['en-US', 'zh-CN', 'en-HK', 'ja-JP', 'en-UK', 'ko-KR']
+
     return (
-        <div style={{ width: '60%', margin: 'auto' }}>
+        <div style={{width: '60%', margin: 'auto'}}>
+
             <Row>
-                <SuggestInput />
+                <Select
+                    style={{margin: '16px', width: '200px'}}
+                    placeholder={'请选择语言'}
+                    mode="multiple"
+                    allowClear>
+                    {localeList.map(it => (
+                        <Select.Option key={it} value={it}>{it}</Select.Option>
+                    ))}
+                </Select>
             </Row>
-            <Row style={{ textAlign: 'center', margin: '10px' }}>
-                <Button onClick={onClickButton} style={{ width: '60%' }}>
+
+            <Row>
+                <SuggestInput/>
+            </Row>
+            <Row style={{textAlign: 'center', margin: '10px'}}>
+                <Button onClick={onClickButton} style={{width: '60%'}}>
                     antd Button
                 </Button>
             </Row>
             <Row>
-                <AntTable />
+                <AntTable/>
             </Row>
             <Row>
-                <AntPagination />
+                <AntPagination/>
             </Row>
+
 
         </div>
     )
