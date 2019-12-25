@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Upload, Icon, message, Checkbox} from 'antd'
+import Extract  from 'react-extract'
 
 const {Dragger} = Upload
 
@@ -58,6 +59,10 @@ function Tools() {
             </Checkbox.Group>
             <div style={{margin: '24px'}}>
                 <SlowInput slow/>
+            </div>
+
+            <div style={{margin: '24px'}}>
+                <Extract/>
             </div>
         </div>
     )
