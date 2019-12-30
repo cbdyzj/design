@@ -14,6 +14,7 @@ const Antd = lazy(() => import('./pages/antd/antd'))
 const Layout2 = lazy(() => import('./pages/layout2/layout2'))
 const ReactHook = lazy(() => import('./pages/react_hook/react_hook'))
 const Tools = lazy(() => import('./pages/tools/tools'))
+const Xss = lazy(() => import('./pages/xss/xss'))
 
 function Loading() {
     const style = {
@@ -64,6 +65,9 @@ function App() {
                             <li>
                                 <Link to="/tools">Tools</Link>
                             </li>
+                            <li>
+                                <Link to="/xss">Xss</Link>
+                            </li>
                         </ul>
                     </nav>
                     <hr />
@@ -78,6 +82,7 @@ function App() {
                         <Route path="/layout2" component={Layout2} />
                         <Route path="/react_hook" component={ReactHook} />
                         <Route path="/tools" component={Tools} />
+                        <Route path="/xss" component={Xss} />
                     </Suspense>
                 </div>
             </Router>
