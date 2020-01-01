@@ -35,6 +35,7 @@ function Hello(props) {
             </h2>
             <input type="text" value={name} onBlur={handleBlur} onChange={handleChange}/>
             <CountButton/>
+            <p>{navigator.userAgent}</p>
         </div>
     )
 }
