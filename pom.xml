@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.jianzhao</groupId>
-    <artifactId>tsx-css</artifactId>
+    <artifactId>design</artifactId>
     <version>0.0.1</version>
-    <name>TSX and CSS</name>
-    <description>Web APP = JSX + CSS</description>
+    <name>design</name>
+    <description>Design makes the difference</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

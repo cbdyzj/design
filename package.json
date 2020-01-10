@@ -1,5 +1,5 @@
 {
-  "name": "tsx-css",
+  "name": "design",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cbdyzj/tsx-css.git"
+    "url": "git+https://github.com/cbdyzj/design.git"
   },
   "engines": {
     "node": ">=10"
@@ -20,9 +20,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cbdyzj/tsx-css/issues"
+    "url": "https://github.com/cbdyzj/design/issues"
   },
-  "homepage": "https://github.com/cbdyzj/tsx-css#readme",
+  "homepage": "https://github.com/cbdyzj/design#readme",
   "devDependencies": {
     "@types/node": "^12.7.8",
     "@types/react": "^16.9.3",

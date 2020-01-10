@@ -1,6 +1,6 @@
-# TSX and CSS
+# design
 
-Web APP = JSX + CSS
+Design makes the difference
 
 ## Tools
 
