@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+</head>
+<body>
+<div>Redirecting...</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+<script>
+    function redirect() {
+        window.location.href = ''
+    }
+
+    ;(function () {
+        if (window.location.host.includes('localhost')) {
+            Cookies.set('key', 'value')
+        }
+        const value = Cookies.get('key')
+        console.log(value)
+        // redirect()
+    })()
+
+</script>
+</html>
