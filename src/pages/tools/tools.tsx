@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
-import {Upload, Icon, message, Checkbox} from 'antd'
-import Extract  from 'react-extract'
+import React, { useState } from 'react'
+import { Upload, Icon, message, Checkbox } from 'antd'
+import Avatar from '../../components/avatar/avatar'
+import Extract from 'react-extract'
 
-const {Dragger} = Upload
+const { Dragger } = Upload
 
-import {importExcelFile} from '../../util/excel'
+import { importExcelFile } from '../../util/excel'
 import SlowInput from "../../components/slow_input/slow_input";
 
 function Tools() {
@@ -38,10 +39,10 @@ function Tools() {
 
     return (
         <div>
-            <div style={{width: '20vw', margin: '32px 0 0 24px'}}>
+            <div style={{ width: '20vw', margin: '32px 0 0 24px' }}>
                 <Dragger {...draggerConfig}>
                     <p className="ant-upload-drag-icon">
-                        <Icon type="inbox"/>
+                        <Icon type="inbox" />
                     </p>
                     <p className="ant-upload-text">Click or drag to upload</p>
                     <p className="ant-upload-hint">
@@ -50,19 +51,22 @@ function Tools() {
                 </Dragger>
             </div>
             <Checkbox.Group
-                style={{margin: '32px 0 0 24px'}}
+                style={{ margin: '32px 0 0 24px' }}
                 onChange={handleCheckboxChange}>
                 <Checkbox disabled={includeItem(['C', 'D'])} value={'A'}>A</Checkbox>
                 <Checkbox disabled={includeItem(['C', 'D'])} value={'B'}>B</Checkbox>
                 <Checkbox disabled={includeItem(['A', 'B'])} value={'C'}>C</Checkbox>
                 <Checkbox disabled={includeItem(['A', 'B'])} value={'D'}>D</Checkbox>
             </Checkbox.Group>
-            <div style={{margin: '24px'}}>
-                <SlowInput slow/>
+            <div style={{ margin: '24px' }}>
+                <SlowInput slow />
+            </div>
+            <div style={{ margin: '24px' }}>
+                <Avatar character="A" />
             </div>
 
-            <div style={{margin: '24px'}}>
-                <Extract/>
+            <div style={{ margin: '24px' }}>
+                <Extract />
             </div>
         </div>
     )
