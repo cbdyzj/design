@@ -29,12 +29,7 @@ function Hello(props) {
 
     return (
         <div style={{ padding: '25px' }}>
-            <h2>
-                你好哇，
-                {/* <Avatar character={name}/>！ */}
-            </h2>
-            {/* <input type="text" value={name} onBlur={handleBlur} onChange={handleChange}/>
-            <CountButton/> */}
+            <h2>hello design</h2>
             <p>{navigator.userAgent}</p>
         </div>
     )
