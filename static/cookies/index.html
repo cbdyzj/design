@@ -15,9 +15,9 @@
 
     ;(function () {
         if (window.location.host.includes('localhost')) {
-            Cookies.set('key', 'value')
+            Cookies.set('host', 'localhost')
         }
-        const value = Cookies.get('key')
+        const value = Cookies.get('host')
         console.log(value)
         // redirect()
     })()
