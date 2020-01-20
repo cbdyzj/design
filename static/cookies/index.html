@@ -13,8 +13,12 @@
         window.location.href = ''
     }
 
+    function hostIncludes(s){
+        return window.location.host.includes(s)
+    }
+
     ;(function () {
-        if (window.location.host.includes('localhost')) {
+        if (hostIncludes('localhost')) {
             Cookies.set('host', 'localhost')
         }
         const value = Cookies.get('host')
