@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Upload, Icon, message, Checkbox } from 'antd'
+import { Upload, message, Checkbox } from 'antd'
+import { InboxOutlined } from '@ant-design/icons'
 import Avatar from '../../components/avatar/avatar'
 import Extract from 'react-extract'
 
@@ -42,7 +43,7 @@ function Tools() {
             <div style={{ width: '20vw', margin: '32px 0 0 24px' }}>
                 <Dragger {...draggerConfig}>
                     <p className="ant-upload-drag-icon">
-                        <Icon type="inbox" />
+                        <InboxOutlined />
                     </p>
                     <p className="ant-upload-text">Click or drag to upload</p>
                     <p className="ant-upload-hint">
