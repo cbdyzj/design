@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Button, Row, message, Select} from 'antd'
+import { Button, Row, message, Select, Modal } from 'antd'
 
 import AntTable from '../../components/antd/ant_table'
 import AntPagination from '../../components/antd/ant_pagination'
@@ -14,11 +14,11 @@ function Antd() {
     const localeList = ['en-US', 'zh-CN', 'en-HK', 'ja-JP', 'en-UK', 'ko-KR']
 
     return (
-        <div style={{width: '60%', margin: 'auto'}}>
+        <div style={{ width: '60%', margin: 'auto' }}>
 
             <Row>
                 <Select
-                    style={{margin: '16px', width: '200px'}}
+                    style={{ margin: '16px', width: '200px' }}
                     placeholder={'请选择语言'}
                     mode="multiple"
                     allowClear>
@@ -31,10 +31,21 @@ function Antd() {
             <Row>
                 <SuggestInput/>
             </Row>
-            <Row style={{textAlign: 'center', margin: '10px'}}>
-                <Button onClick={onClickButton} style={{width: '60%'}}>
+            <Row style={{ textAlign: 'center', margin: '10px' }}>
+                <Button onClick={onClickButton} style={{ width: '60%' }}>
                     antd Button
                 </Button>
+            </Row>
+            <Row style={{ textAlign: 'center', margin: '10px' }}>
+                <Button onClick={() => {
+                    Modal.success({
+                        className:'modal-success',
+                        title: 'title',
+                        content: 'content',
+                        okText: 'Got it',
+                        width:'600px',
+                    })
+                }}>modal</Button>
             </Row>
             <Row>
                 <AntTable/>
