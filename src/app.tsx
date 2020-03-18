@@ -12,7 +12,7 @@ const ReduxPage = lazy(() => import('./pages/redux/redux_page'))
 const QuillEditor = lazy(() => import('./pages/quill_editor/quill_editor'))
 const Antd = lazy(() => import('./pages/antd/antd'))
 const Layout2 = lazy(() => import('./pages/layout2/layout2'))
-const ReactHook = lazy(() => import('./pages/react_hook/react_hook'))
+const ReactHook = lazy(() => import('./pages/react_hooks/react_hook'))
 const Tools = lazy(() => import('./pages/tools/tools'))
 const Xss = lazy(() => import('./pages/xss/xss'))
 
