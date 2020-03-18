@@ -12,7 +12,7 @@ const ReduxPage = lazy(() => import('./pages/redux/redux_page'))
 const QuillEditor = lazy(() => import('./pages/quill_editor/quill_editor'))
 const Antd = lazy(() => import('./pages/antd/antd'))
 const Layout2 = lazy(() => import('./pages/layout2/layout2'))
-const ReactHook = lazy(() => import('./pages/react_hooks/react_hook'))
+const ReactHooks = lazy(() => import('./pages/react_hooks/react_hooks'))
 const Tools = lazy(() => import('./pages/tools/tools'))
 const Xss = lazy(() => import('./pages/xss/xss'))
 
@@ -60,7 +60,7 @@ function App() {
                                 <Link to="/layout2">Layout2</Link>
                             </li>
                             <li>
-                                <Link to="/react_hook">React hook</Link>
+                                <Link to="/react_hooks">React hooks</Link>
                             </li>
                             <li>
                                 <Link to="/tools">Tools</Link>
@@ -80,7 +80,7 @@ function App() {
                         <Route path="/quill_editor" component={QuillEditor} />
                         <Route path="/antd" component={Antd} />
                         <Route path="/layout2" component={Layout2} />
-                        <Route path="/react_hook" component={ReactHook} />
+                        <Route path="/react_hooks" component={ReactHooks} />
                         <Route path="/tools" component={Tools} />
                         <Route path="/xss" component={Xss} />
                     </Suspense>

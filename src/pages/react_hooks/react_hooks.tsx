@@ -24,7 +24,7 @@ function ContentRender(props) {
     )
 }
 
-function ReactHook(props) {
+function ReactHooks(props) {
     const [content, setContent] = useState('')
     const [values, setValues] = useState('{}')
 
@@ -46,4 +46,4 @@ function ReactHook(props) {
     )
 }
 
-export default ReactHook
+export default ReactHooks
