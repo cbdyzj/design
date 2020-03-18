@@ -29,7 +29,7 @@ function ReactHook(props) {
 
     return (
         <div style={{ margin: '24px' }}>
-            <h1>React hook</h1>
+            <h2>React hooks</h2>
             <input value={content}
                    onChange={handleInputChange}/>
             <ContentRender content={content}/>
