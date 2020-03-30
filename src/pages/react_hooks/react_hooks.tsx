@@ -4,7 +4,7 @@ function ContentRender(props) {
     const content = props.content || ''
     let values = {}
     try {
-        values = JSON.parse(props.values || '')
+        values = JSON.parse(props.values || '{}')
     } catch (error) {
 
     }

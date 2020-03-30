@@ -1,4 +1,4 @@
-import { HashRouter as Router, Link, Route,Redirect } from 'react-router-dom'
+import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 import React, { Suspense, lazy } from 'react'
 
 import style from './app.less'
@@ -15,6 +15,7 @@ const Layout2 = lazy(() => import('./pages/layout2/layout2'))
 const ReactHooks = lazy(() => import('./pages/react_hooks/react_hooks'))
 const Tools = lazy(() => import('./pages/tools/tools'))
 const Xss = lazy(() => import('./pages/xss/xss'))
+const X = lazy(() => import('./pages/x/x'))
 
 function Loading() {
     const style = {
@@ -26,7 +27,7 @@ function Loading() {
     }
     return (
         <div style={style}>
-            <Spin size="large" />
+            <Spin size="large"/>
         </div>
     )
 }
@@ -68,21 +69,25 @@ function App() {
                             <li>
                                 <Link to="/xss">Xss</Link>
                             </li>
+                            <li>
+                                <Link to="/x">X</Link>
+                            </li>
                         </ul>
                     </nav>
-                    <hr />
-                    <Suspense fallback={<Loading />}>
-                        <Route path="/" exact render={() => <Redirect to="/hello" />} />
-                        <Route path="/hello" component={() => <Hello defaultName="你" />} />
-                        <Route path="/bind2" component={Bind2} />
-                        <Route path="/picture_list" component={PictureList} />
-                        <Route path="/redux_page" component={ReduxPage} />
-                        <Route path="/quill_editor" component={QuillEditor} />
-                        <Route path="/antd" component={Antd} />
-                        <Route path="/layout2" component={Layout2} />
-                        <Route path="/react_hooks" component={ReactHooks} />
-                        <Route path="/tools" component={Tools} />
-                        <Route path="/xss" component={Xss} />
+                    <hr/>
+                    <Suspense fallback={<Loading/>}>
+                        <Route path="/" exact render={() => <Redirect to="/hello"/>}/>
+                        <Route path="/hello" component={() => <Hello defaultName="你"/>}/>
+                        <Route path="/bind2" component={Bind2}/>
+                        <Route path="/picture_list" component={PictureList}/>
+                        <Route path="/redux_page" component={ReduxPage}/>
+                        <Route path="/quill_editor" component={QuillEditor}/>
+                        <Route path="/antd" component={Antd}/>
+                        <Route path="/layout2" component={Layout2}/>
+                        <Route path="/react_hooks" component={ReactHooks}/>
+                        <Route path="/tools" component={Tools}/>
+                        <Route path="/xss" component={Xss}/>
+                        <Route path="/x" component={X}/>
                     </Suspense>
                 </div>
             </Router>
