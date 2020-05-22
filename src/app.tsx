@@ -16,6 +16,7 @@ const ReactHooks = lazy(() => import('./pages/react_hooks/react_hooks'))
 const Tools = lazy(() => import('./pages/tools/tools'))
 const Xss = lazy(() => import('./pages/xss/xss'))
 const X = lazy(() => import('./pages/x/x'))
+const Transformer = lazy(() => import('./pages/transformer/transformer'))
 
 function Loading() {
     const style = {
@@ -72,6 +73,9 @@ function App() {
                             <li>
                                 <Link to="/x">X</Link>
                             </li>
+                            <li>
+                                <Link to="/transformer">Transformer</Link>
+                            </li>
                         </ul>
                     </nav>
                     <hr/>
@@ -88,6 +92,7 @@ function App() {
                         <Route path="/tools" component={Tools}/>
                         <Route path="/xss" component={Xss}/>
                         <Route path="/x" component={X}/>
+                        <Route path="/transformer" component={Transformer}/>
                     </Suspense>
                 </div>
             </Router>
