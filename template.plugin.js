@@ -1,5 +1,4 @@
-const MiniHtmlWebpackPlugin = require('mini-html-webpack-plugin')
-const { generateJSReferences } = MiniHtmlWebpackPlugin
+const { MiniHtmlWebpackPlugin, generateJSReferences } = require('mini-html-webpack-plugin')
 
 function template({ publicPath, js }) {
     const jsTags = generateJSReferences({

@@ -2,18 +2,35 @@ import React, { useState } from 'react'
 
 import style from './style.less'
 
-function transform(origin: string) {
-    return origin
-}
-
 function Transformer() {
     const [origin, setOrigin] = useState('')
     const [target, setTarget] = useState('')
+    const [transformer, setTransformer] = useState('return origin')
+
+    function transform(originText, transformerBody) {
+        let result
+        try {
+            result = new Function('origin', transformerBody)(originText)
+        } catch (error) {
+            result = 'Error: ' + error
+        }
+        return result
+    }
 
     function onTextChange(ev) {
         const originText = ev.target.value
         setOrigin(originText)
-        setTarget(transform(originText))
+        const result = transform(originText, transformer)
+        setTarget(result)
+    }
+
+    function onTransformerChange(ev) {
+        const transformerBody = ev.target.value
+        console.log('transformerBody', transformerBody)
+        setTransformer(ev.target.value)
+        const result = transform(origin, transformerBody) || ''
+        console.log('result', result)
+        setTarget(result)
     }
 
     return (
@@ -23,6 +40,11 @@ function Transformer() {
                 onChange={onTextChange}
                 value={origin}/>
             <textarea readOnly className={style['text-box']} value={target}/>
+            <textarea
+                className={style['transformer-box']}
+                onChange={onTransformerChange}
+                value={transformer}
+            />
         </div>
     )
 }

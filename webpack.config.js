@@ -35,7 +35,7 @@ const config = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
-        new CopyPlugin(['favicon.ico']),
+        new CopyPlugin({ patterns: ['favicon.ico'] }),
         ...templatePlugin,
     ],
     optimization: {
@@ -45,8 +45,8 @@ const config = {
         },
     },
     output: {
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist')
     },
     mode: 'development',
