@@ -7,6 +7,10 @@ function Transformer() {
     const [target, setTarget] = useState('')
     const [transformer, setTransformer] = useState('return origin')
 
+    function setTargetText(targetText) {
+        setTarget(String(targetText))
+    }
+
     function transform(originText, transformerBody) {
         let result
         try {
@@ -21,16 +25,14 @@ function Transformer() {
         const originText = ev.target.value
         setOrigin(originText)
         const result = transform(originText, transformer)
-        setTarget(result)
+        setTargetText(result)
     }
 
     function onTransformerChange(ev) {
         const transformerBody = ev.target.value
-        console.log('transformerBody', transformerBody)
         setTransformer(ev.target.value)
         const result = transform(origin, transformerBody) || ''
-        console.log('result', result)
-        setTarget(result)
+        setTargetText(result)
     }
 
     return (
