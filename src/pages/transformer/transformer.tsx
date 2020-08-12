@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 
 import style from './style.less'
 
-const AsyncFunction = Object.getPrototypeOf(async function () { }).constructor
+const AsyncFunction = Object.getPrototypeOf(async function () {
+}).constructor
 
 const TRANSFORM_DELAY = 1000
 
@@ -20,6 +21,9 @@ function Transformer() {
         let result
         try {
             result = await new AsyncFunction('origin', transformerBody)(originText)
+            if (typeof result === 'function') {
+                result = await result(originText)
+            }
         } catch (error) {
             result = 'Error: ' + error
         }

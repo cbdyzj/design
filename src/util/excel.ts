@@ -1,6 +1,8 @@
 import xlsx from 'xlsx'
 
-// 导入
+/**
+ * 导入
+ */
 export function importExcelFile(file) {
     return new Promise((resolve, reject) => {
         function handleOnLoad(event) {
@@ -43,7 +45,9 @@ function s2ab(s) {
     return buf;
 }
 
-// 导出
+/**
+ * 导出
+ */
 export function exportExcelFile(sheetsData, filename = new Date().getTime() + '.xlsx') {
     const wb = xlsx.utils.book_new()
     for (const sheet of sheetsData) {
