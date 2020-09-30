@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Upload, message, Checkbox } from 'antd'
 import { InboxOutlined } from '@ant-design/icons'
 import Avatar from '../../components/avatar/avatar'
-import Extract from 'react-extract'
 
 const { Dragger } = Upload
 
@@ -64,10 +63,6 @@ function Tools() {
             </div>
             <div style={{ margin: '24px' }}>
                 <Avatar character="A" />
-            </div>
-
-            <div style={{ margin: '24px' }}>
-                <Extract />
             </div>
         </div>
     )
