@@ -9,7 +9,6 @@ const Hello = lazy(() => import('./pages/hello/hello'))
 const Bind2 = lazy(() => import('./pages/bind2/bind2'))
 const PictureList = lazy(() => import('./pages/picture_list/picture_list'))
 const ReduxPage = lazy(() => import('./pages/redux/redux_page'))
-const QuillEditor = lazy(() => import('./pages/quill_editor/quill_editor'))
 const Antd = lazy(() => import('./pages/antd/antd'))
 const Layout2 = lazy(() => import('./pages/layout2/layout2'))
 const ReactHooks = lazy(() => import('./pages/react_hooks/react_hooks'))
@@ -53,9 +52,6 @@ function App() {
                                 <Link to="/redux_page">Redux page</Link>
                             </li>
                             <li>
-                                <Link to="/quill_editor">Quill Editor</Link>
-                            </li>
-                            <li>
                                 <Link to="/antd">antd</Link>
                             </li>
                             <li>
@@ -85,7 +81,6 @@ function App() {
                         <Route path="/bind2" component={Bind2}/>
                         <Route path="/picture_list" component={PictureList}/>
                         <Route path="/redux_page" component={ReduxPage}/>
-                        <Route path="/quill_editor" component={QuillEditor}/>
                         <Route path="/antd" component={Antd}/>
                         <Route path="/layout2" component={Layout2}/>
                         <Route path="/react_hooks" component={ReactHooks}/>
