@@ -1,16 +1,12 @@
-# dependencies
 node_modules/
-
-# production
 build/
 dist/
-
-# misc
 .idea/
-.happypack
-.DS_Store
-
-npm-debug.log*
 target/
 .gradle/
+
+.happypack
+.DS_Store
+npm-debug.log*
 *.iml
+yarn.lock
