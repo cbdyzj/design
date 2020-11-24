@@ -1,13 +1,20 @@
-const path = require('path')
+const { resolve } = require('path')
+const { ESBuildPlugin } = require('esbuild-loader')
 const CopyPlugin = require('copy-webpack-plugin')
-const templatePlugin = require('./template.plugin')
+const templatePlugin = require('./template.plugin.js')
 
 const config = {
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [{ loader: 'ts-loader' }],
+                use: [{
+                    loader: 'esbuild-loader',
+                    options: {
+                        loader: 'tsx',
+                        target: 'es2020'
+                    }
+                }],
                 exclude: /node_modules/,
             }, {
                 test: /\.(png|jpg|jpeg|gif)$/,
@@ -35,6 +42,7 @@ const config = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
+        new ESBuildPlugin(),
         new CopyPlugin({ patterns: ['favicon.ico'] }),
         ...templatePlugin,
     ],
@@ -47,7 +55,7 @@ const config = {
     output: {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: resolve(__dirname, 'dist')
     },
     mode: 'development',
 }
