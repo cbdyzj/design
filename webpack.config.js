@@ -26,7 +26,7 @@ const config = {
                     { loader: 'css-loader', options: { modules: true } },
                     { loader: 'less-loader' },
                 ],
-                exclude: [path.resolve(__dirname, 'node_modules')]
+                exclude: [resolve(__dirname, 'node_modules')]
             }, {
                 test: /\.(css|less)$/,
                 use: [
@@ -34,7 +34,7 @@ const config = {
                     { loader: 'css-loader' },
                     { loader: 'less-loader' },
                 ],
-                include: [path.resolve(__dirname, 'node_modules')]
+                include: [resolve(__dirname, 'node_modules')]
             }
         ]
     },
