@@ -1,12 +1,12 @@
-import {Select} from "antd";
-import React, {useRef, useState} from "react";
+import { Select } from 'antd'
+import React, { useRef, useState } from 'react'
 
 
 const fakeData = [
-    {id: 1, name: '上海'},
-    {id: 2, name: '南京'},
-    {id: 3, name: '南昌'},
-    {id: 4, name: '上饶'},
+    { id: 1, name: '上海' },
+    { id: 2, name: '南京' },
+    { id: 3, name: '南昌' },
+    { id: 4, name: '上饶' },
 ]
 
 
@@ -68,7 +68,7 @@ export default function SuggestInput(props) {
             onSearch={handleSearch}
             onChange={handleChange}
             notFoundContent={null}
-            style={{marginLeft: '16px', width: '200px'}}
+            style={{ marginLeft: '16px', width: '200px' }}
             placeholder="请输入一些东西"
         >
             {options}

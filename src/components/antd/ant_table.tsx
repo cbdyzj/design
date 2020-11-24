@@ -1,11 +1,11 @@
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 
-import {Button, Table, Modal, InputNumber, Popconfirm, message, Input} from 'antd'
+import { Button, Table, Modal, InputNumber, Popconfirm, message, Input } from 'antd'
 
 import style from './style.less'
-import {exportExcelFile} from '../../util/excel'
+import { exportExcelFile } from '../../util/excel'
 
-const defaultTableData = Array.from({length: 7}).map((_, i) => {
+const defaultTableData = Array.from({ length: 7 }).map((_, i) => {
     const val = i + 1
     return {
         id: val,
@@ -19,7 +19,7 @@ function AntTable() {
     const [data, setData] = useState(defaultTableData)
 
     function renderOpButton(text, record) {
-        const infoContent = () => Modal.info({content: record.content})
+        const infoContent = () => Modal.info({ content: record.content })
         return (
             <Popconfirm
                 onConfirm={infoContent}
@@ -40,10 +40,10 @@ function AntTable() {
     }
 
     const tableColumns: any = [
-        {title: 'ID', dataIndex: 'id', key: 'id', width: '20%', align: 'center'},
-        {title: '内容', dataIndex: 'content', key: 'content', width: '35%'},
-        {title: '操作', key: 'operation', render: renderOpButton, width: '20%', align: 'center'},
-        {title: '排序', key: 'sort', render: renderSortInput, width: '25%', align: 'center'},
+        { title: 'ID', dataIndex: 'id', key: 'id', width: '20%', align: 'center' },
+        { title: '内容', dataIndex: 'content', key: 'content', width: '35%' },
+        { title: '操作', key: 'operation', render: renderOpButton, width: '20%', align: 'center' },
+        { title: '排序', key: 'sort', render: renderSortInput, width: '25%', align: 'center' },
     ]
 
     const [selectedTableRowKeys, setSelectedTableRowKeys] = useState([])
@@ -64,7 +64,7 @@ function AntTable() {
         selectedTableRows.forEach(it => {
             exportData.push([it.id, it.content, it.sort])
         })
-        exportExcelFile([{name: 'test', data: exportData}])
+        exportExcelFile([{ name: 'test', data: exportData }])
         setSelectedTableRowKeys([])
         setSelectedTableRows([])
     }
@@ -78,7 +78,7 @@ function AntTable() {
                 rowSelection={rowSelection}
                 className={style['ant-table']}
                 pagination={false}
-                style={{margin: '1rem'}}
+                style={{ margin: '1rem' }}
                 dataSource={data}
                 onChange={() => {
                 }}
