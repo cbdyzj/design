@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode production",
-    "serve": "yarn build && node serve.js",
+    "serve": "yarn build && node serve.mjs",
     "clean": "rm -rf dist"
   },
   "type": "module",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/cbdyzj/design.git"
   },
   "engines": {
-    "node": ">=14",
+    "node": "12.x",
     "yarn": ">=1.22"
   },
   "keywords": [],
