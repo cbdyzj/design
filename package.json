@@ -9,7 +9,7 @@
     "serve": "yarn build && node serve.js",
     "clean": "rm -rf dist"
   },
-  "type": "commonjs",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cbdyzj/design.git"

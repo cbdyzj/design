@@ -1,10 +1,12 @@
-import express, { static as handleStatic } from 'express'
+import express from 'express'
+
+const { static: serveStatic } = express
 
 const app = express()
 
 // static files
-app.use(handleStatic('static'))
-app.use(handleStatic('dist'))
+app.use(serveStatic('static'))
+app.use(serveStatic('dist'))
 
 app.get('/ping', (req, res) => {
     res.end('pong')
