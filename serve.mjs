@@ -5,8 +5,8 @@ const { static: serveStatic } = express
 const app = express()
 
 // static files
-app.use(serveStatic('static'))
 app.use(serveStatic('dist'))
+app.use(serveStatic('static'))
 
 app.get('/ping', (req, res) => {
     res.end('pong')
