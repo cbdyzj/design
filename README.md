@@ -4,10 +4,11 @@ Design makes the difference
 
 ## Tools
 
-- webpack: 4.41 (With CSS Modules)
-- TypeScript: 3.7
-- React: 16.12
-- antd: 3.25
+- CSS Modules
+- TypeScript
+- React: 17
+- webpack: 5
+- antd: 4
 
 ## Install
 
