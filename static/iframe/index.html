@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #inner {
+            border: 1px black solid;
+        }
+    </style>
+    <title>iframe</title>
+</head>
+<body>
+<h1>iframe</h1>
+<iframe id="inner" src="./inner.html">
+    iframe not supported
+</iframe>
+<div id="box"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const box = document.querySelector('#box')
+        window.addEventListener('message', (ev) => {
+            if (typeof ev.data !== 'string') {
+                return
+            }
+            const p = document.createElement('p')
+            p.textContent = ev.data
+            box.appendChild(p)
+        })
+    })
+</script>
+</body>
+</html>

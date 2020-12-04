@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iframe-inner</title>
+</head>
+<body>
+<div>inner page</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const topWindow = window.top
+        if (window === topWindow) {
+            return
+        }
+
+        const targetOrigin = `${location.protocol}//${location.host}`
+
+        function send(message) {
+            topWindow.postMessage(message, targetOrigin)
+        }
+
+        let c = 7
+        const t = setInterval(() => {
+            if (c <= 0) {
+                clearInterval(t)
+                send('end')
+                return
+            }
+            send(`message from inner iframe, ${c}`)
+            c--
+        }, 1000)
+    })
+</script>
+</body>
+
+</html>
