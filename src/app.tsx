@@ -1,7 +1,9 @@
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 import React, { Suspense, lazy } from 'react'
 
+import 'antd/dist/antd.css'
 import style from './app.less'
+
 import { Spin } from 'antd'
 
 // 懒加载
