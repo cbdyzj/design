@@ -13,6 +13,6 @@ function htmlTemplate({ publicPath, js }) {
     return render(indexHtml, { jsTags })
 }
 
-module.exports = [
-    new MiniHtmlWebpackPlugin({ template: htmlTemplate })
-]
+module.exports = function (options = {}) {
+    return new MiniHtmlWebpackPlugin({ template: htmlTemplate, ...options })
+}
