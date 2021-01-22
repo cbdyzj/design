@@ -1,5 +1,6 @@
-import SomeContext from './c'
 import React, { useContext } from 'react'
+
+import SomeContext from './c'
 
 function Y() {
     const c = useContext(SomeContext)

@@ -1,8 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import PageTurner from './page_turner'
 import Book from './book'
-import { connect } from 'react-redux'
+
 
 function ReduxPage(props) {
     const { match } = props

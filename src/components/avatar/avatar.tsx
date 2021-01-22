@@ -1,7 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import style from './style.less'
-import ReactDOM from "react-dom";
 
 interface Props {
     character?: string
