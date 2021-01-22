@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
+import { Button, Table, Modal, Popconfirm, Input } from 'antd'
 
-import { Button, Table, Modal, InputNumber, Popconfirm, message, Input } from 'antd'
+import { exportExcelFile } from '@/util/excel'
 
 import style from './style.less'
-import { exportExcelFile } from '@/util/excel'
+
 
 const defaultTableData = Array.from({ length: 7 }).map((_, i) => {
     const val = i + 1
@@ -35,7 +36,7 @@ function AntTable() {
 
     function renderSortInput(text, record) {
         return (
-            <Input type="text" defaultValue={text.sort}/>
+            <Input type="text" defaultValue={text.sort} />
         )
     }
 
