@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { Button, Table, Modal, Popconfirm, Input } from 'antd'
 
-import { exportExcelFile } from '@/util/excel'
+import { exportExcelFile } from '@/utils/excel'
 
 import style from './style.less'
-
 
 const defaultTableData = Array.from({ length: 7 }).map((_, i) => {
     const val = i + 1

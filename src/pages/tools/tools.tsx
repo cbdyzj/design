@@ -7,7 +7,7 @@ import Avatar from '@/components/avatar/avatar'
 
 const { Dragger } = Upload
 
-import { importExcelFile } from '@/util/excel'
+import { importExcelFile } from '@/utils/excel'
 import SlowInput from '@/components/slow_input/slow_input'
 
 function Tools() {

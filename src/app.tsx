@@ -6,7 +6,7 @@ import style from './app.less'
 
 import { Spin } from 'antd'
 
-// 懒加载
+// lazy
 const Hello = lazy(() => import('./pages/hello/hello'))
 const Bind2 = lazy(() => import('./pages/bind2/bind2'))
 const PictureList = lazy(() => import('./pages/picture_list/picture_list'))
@@ -29,7 +29,7 @@ function Loading() {
     }
     return (
         <div style={style}>
-            <Spin size="large"/>
+            <Spin size="large" />
         </div>
     )
 }
@@ -76,20 +76,20 @@ function App() {
                             </li>
                         </ul>
                     </nav>
-                    <hr/>
-                    <Suspense fallback={<Loading/>}>
-                        <Route path="/" exact render={() => <Redirect to="/hello"/>}/>
-                        <Route path="/hello" component={() => <Hello defaultName="你"/>}/>
-                        <Route path="/bind2" component={Bind2}/>
-                        <Route path="/picture_list" component={PictureList}/>
-                        <Route path="/redux_page" component={ReduxPage}/>
-                        <Route path="/antd" component={Antd}/>
-                        <Route path="/layout2" component={Layout2}/>
-                        <Route path="/react_hooks" component={ReactHooks}/>
-                        <Route path="/tools" component={Tools}/>
-                        <Route path="/xss" component={Xss}/>
-                        <Route path="/x" component={X}/>
-                        <Route path="/transformer" component={Transformer}/>
+                    <hr />
+                    <Suspense fallback={<Loading />}>
+                        <Route path="/" exact render={() => <Redirect to="/hello" />} />
+                        <Route path="/hello" component={() => <Hello defaultName="你" />} />
+                        <Route path="/bind2" component={Bind2} />
+                        <Route path="/picture_list" component={PictureList} />
+                        <Route path="/redux_page" component={ReduxPage} />
+                        <Route path="/antd" component={Antd} />
+                        <Route path="/layout2" component={Layout2} />
+                        <Route path="/react_hooks" component={ReactHooks} />
+                        <Route path="/tools" component={Tools} />
+                        <Route path="/xss" component={Xss} />
+                        <Route path="/x" component={X} />
+                        <Route path="/transformer" component={Transformer} />
                     </Suspense>
                 </div>
             </Router>

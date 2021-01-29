@@ -6,11 +6,17 @@
         "target": "ES2020",
         "outDir": "dist",
         "jsx": "react",
-        "allowJs": false,
+        "allowJs": true,
         "lib": [
             "ES2020",
             "DOM"
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        }
     },
     "exclude": [
         "node_modules"

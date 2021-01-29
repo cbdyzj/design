@@ -1,3 +1,9 @@
+export function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms)
+    })
+}
+
 export function debounce(func, delay) {
     let timer
 

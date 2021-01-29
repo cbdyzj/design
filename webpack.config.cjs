@@ -3,7 +3,7 @@ const { ESBuildPlugin } = require('esbuild-loader')
 const CopyPlugin = require('copy-webpack-plugin')
 const createTemplatePlugin = require('./template.plugin.cjs')
 
-const config = function (env) {
+module.exports = function (env) {
 
     const templatePlugin = [createTemplatePlugin()]
 
@@ -14,10 +14,7 @@ const config = function (env) {
                     test: /\.tsx?$/,
                     use: [{
                         loader: 'esbuild-loader',
-                        options: {
-                            loader: 'tsx',
-                            target: 'es2020'
-                        }
+                        options: { loader: 'tsx', target: 'es2020' }
                     }],
                     exclude: /node_modules/,
                 }, {
@@ -43,10 +40,8 @@ const config = function (env) {
             ]
         },
         resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
-            alias: {
-                '@': resolve(__dirname, 'src')
-            }
+            extensions: ['.tsx', '.ts', 'jsx', '.js'],
+            alias: { '@': resolve(__dirname, 'src') },
         },
         plugins: [
             new ESBuildPlugin(),
@@ -67,5 +62,3 @@ const config = function (env) {
         mode: 'development',
     }
 }
-
-module.exports = config
