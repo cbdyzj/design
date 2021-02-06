@@ -10,3 +10,4 @@ target/
 npm-debug.log*
 *.iml
 yarn.lock
+package-lock.json

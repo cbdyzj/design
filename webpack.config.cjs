@@ -1,5 +1,4 @@
 const { resolve } = require('path')
-const { ESBuildPlugin } = require('esbuild-loader')
 const CopyPlugin = require('copy-webpack-plugin')
 const createTemplatePlugin = require('./template.plugin.cjs')
 
@@ -11,11 +10,8 @@ module.exports = function (env) {
         module: {
             rules: [
                 {
-                    test: /\.tsx?$/,
-                    use: [{
-                        loader: 'esbuild-loader',
-                        options: { loader: 'tsx', target: 'es2020' }
-                    }],
+                    test: /\.[tj]sx?$/,
+                    use: [{ loader: 'ts-loader' }],
                     exclude: /node_modules/,
                 }, {
                     test: /\.(png|jpg|jpeg|gif)$/,
@@ -44,7 +40,6 @@ module.exports = function (env) {
             alias: { '@': resolve(__dirname, 'src') },
         },
         plugins: [
-            new ESBuildPlugin(),
             new CopyPlugin({ patterns: ['favicon.ico'] }),
             ...templatePlugin,
         ],
