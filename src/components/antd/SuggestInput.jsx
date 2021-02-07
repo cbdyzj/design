@@ -21,7 +21,7 @@ export default function SuggestInput(props) {
         )
     })
 
-    const fetchContext = useRef({} as any).current
+    const fetchContext = useRef({}).current
 
     function fetch(value, callback) {
         if (fetchContext.timeout) {

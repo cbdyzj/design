@@ -8,15 +8,15 @@ import Avatar from '@/components/avatar/avatar'
 const { Dragger } = Upload
 
 import { importExcelFile } from '@/utils/excel'
-import SlowInput from '@/components/slow_input/slow_input'
+import SlowInput from '@/components/slow_input/SlowInput'
 
-function Tools() {
+export default function Tools() {
 
     const draggerConfig = {
         accept: '.xlsx',
         beforeUpload(file, fileList) {
             importExcelFile(file)
-                .then((sheetsData: any) => {
+                .then((sheetsData) => {
                     for (const sheet of sheetsData) {
                         message.info('导入成功: ' + sheet.name)
                         console.log(sheet.name, sheet.data)
@@ -35,7 +35,7 @@ function Tools() {
         setChecked(ev)
     }
 
-    function includeItem(items: string[]) {
+    function includeItem(items) {
         return items.some(it => checked.includes(it))
     }
 
@@ -69,5 +69,3 @@ function Tools() {
         </div>
     )
 }
-
-export default Tools

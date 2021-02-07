@@ -1,9 +1,9 @@
 import React from 'react'
 
-import style from './picture_list.css'
+import style from './style.module.css'
 import xmm from './xmm.jpeg'
 
-function PictureList() {
+export default function PictureList() {
     return (
         <div className={style['picture-list']}>
             <h1>Picture List</h1>
@@ -12,4 +12,3 @@ function PictureList() {
     )
 }
 
-export default PictureList

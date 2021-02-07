@@ -1,47 +1,60 @@
 const { resolve } = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
-const createTemplatePlugin = require('./template.plugin.cjs')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = function (env) {
 
-    const templatePlugin = [createTemplatePlugin()]
-
     return {
+        mode: 'development',
         module: {
             rules: [
                 {
-                    test: /\.[tj]sx?$/,
-                    use: [{ loader: 'ts-loader' }],
+                    test: /\.jsx?$/,
+                    use: [{
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-react'],
+                        }
+                    }],
                     exclude: /node_modules/,
                 }, {
                     test: /\.(png|jpg|jpeg|gif)$/,
-                    use: [{ loader: 'file-loader', options: { outputPath: 'assets' } }],
+                    use: [{
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            fallback: {
+                                loader: 'file-loader',
+                                options: { outputPath: 'assets' }
+                            }
+                        }
+                    }],
                 }, {
-                    test: /\.(css|less)$/,
+                    test: /\.module\.(css|less)$/,
                     use: [
                         { loader: 'style-loader' },
                         { loader: 'css-loader', options: { modules: true } },
                         { loader: 'less-loader' },
                     ],
-                    exclude: /node_modules/
                 }, {
-                    test: /\.(css|less)$/,
+                    test: (name) => /\.(css|less)$/.test(name) && !/\.module\.(css|less)$/.test(name),
                     use: [
                         { loader: 'style-loader' },
                         { loader: 'css-loader' },
                         { loader: 'less-loader' },
                     ],
-                    include: /node_modules/
-                }
+                },
             ]
         },
         resolve: {
-            extensions: ['.tsx', '.ts', 'jsx', '.js'],
+            extensions: ['.js', '.jsx'],
             alias: { '@': resolve(__dirname, 'src') },
         },
         plugins: [
             new CopyPlugin({ patterns: ['favicon.ico'] }),
-            ...templatePlugin,
+            new HtmlWebpackPlugin({
+                template: 'index.html',
+            }),
         ],
         optimization: {
             splitChunks: {
@@ -49,11 +62,11 @@ module.exports = function (env) {
                 automaticNameDelimiter: '_',
             },
         },
+        entry: './src/index.jsx',
         output: {
             filename: '[name].[chunkhash].js',
             chunkFilename: '[name].[chunkhash].js',
             path: resolve(__dirname, 'dist')
         },
-        mode: 'development',
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Hello(props) {
+export default function Hello(props) {
 
     return (
         <div style={{ padding: '25px' }}>
@@ -9,5 +9,3 @@ function Hello(props) {
         </div>
     )
 }
-
-export default Hello

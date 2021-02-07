@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Extract from '@/components/extract/extract'
-import style from './style.less'
+import style from './style.module.less'
 
-function Layout2() {
+export default function Layout2() {
     return (
         <div className={style.layout2}>
             <div className={style.hole}>
@@ -19,5 +19,3 @@ function Layout2() {
         </div>
     )
 }
-
-export default Layout2

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
-import './style.less'
+import './style.module.less'
 
-const hiddenStyle: { height?: string } = {
+const hiddenStyle = {
     height: 'calc(8em + 5px)',
 }
 
 const [openText, closeText] = ['展开全部 ↓', '收起 ↑']
 
-function Extract(props) {
+export default function Extract(props) {
 
     const [extraStyle, setExtraStyle] = useState(hiddenStyle)
     const [switchText, setSwitchText] = useState(openText)
@@ -36,5 +36,3 @@ function Extract(props) {
         </div>
     )
 }
-
-export default Extract

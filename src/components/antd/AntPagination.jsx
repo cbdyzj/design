@@ -4,7 +4,7 @@ import { Typography, Pagination } from 'antd'
 
 const { Text, Paragraph } = Typography
 
-function AntPagination() {
+export default function AntPagination() {
     const [mark, setMark] = useState('分页器')
 
     function onChangePagination(page, pageSize) {
@@ -28,5 +28,3 @@ function AntPagination() {
         </div>
     )
 }
-
-export default AntPagination

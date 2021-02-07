@@ -2,11 +2,11 @@ import React from 'react'
 
 import { Button, Row, message, Select, Modal } from 'antd'
 
-import AntTable from '@/components/antd/ant_table'
-import AntPagination from '@/components/antd/ant_pagination'
-import SuggestInput from '@/components/antd/suggest_input'
+import AntTable from '@/components/antd/AntTable'
+import AntPagination from '@/components/antd/AntPagination'
+import SuggestInput from '@/components/antd/SuggestInput'
 
-function Antd() {
+export default function Antd() {
     function onClickButton() {
         message.info('Welcome Ant Design!')
     }
@@ -58,5 +58,3 @@ function Antd() {
         </div>
     )
 }
-
-export default Antd

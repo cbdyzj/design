@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 
-import style from './bind2.css'
+import style from './style.module.css'
 
-function Bind2() {
+export default function Bind2() {
     useEffect(() => {
         const p = document.querySelector('p')
         const input = document.querySelector('input')
@@ -31,5 +31,3 @@ function Bind2() {
         </div>
     )
 }
-
-export default Bind2

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import SomeContext from './c'
 
-function Y() {
+export default function Y() {
     const c = useContext(SomeContext)
 
     return (
@@ -11,5 +11,3 @@ function Y() {
         </div>
     )
 }
-
-export default Y

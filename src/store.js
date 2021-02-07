@@ -17,6 +17,6 @@ function reducer(state, action) {
     }
 }
 
-const initialState = { count: 100 }
+const initialState = { count: 7 }
 
 export const store = createStore(reducer, initialState)

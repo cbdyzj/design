@@ -12,7 +12,7 @@ function slowTask(val) {
     }
 }
 
-export default function SlowInput(props: { slow?: boolean }) {
+export default function SlowInput(props) {
 
     const [val, setVal] = useState('')
 

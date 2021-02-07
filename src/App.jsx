@@ -1,23 +1,23 @@
-import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
+import { HashRouter as Router, Link, Route, Redirect, Switch } from 'react-router-dom'
 import React, { Suspense, lazy } from 'react'
 
 import 'antd/dist/antd.css'
-import style from './app.less'
+import style from './App.module.less'
 
 import { Spin } from 'antd'
 
 // lazy
-const Hello = lazy(() => import('./pages/hello/hello'))
-const Bind2 = lazy(() => import('./pages/bind2/bind2'))
-const PictureList = lazy(() => import('./pages/picture_list/picture_list'))
-const ReduxPage = lazy(() => import('./pages/redux/redux_page'))
-const Antd = lazy(() => import('./pages/antd/antd'))
-const Layout2 = lazy(() => import('./pages/layout2/layout2'))
-const ReactHooks = lazy(() => import('./pages/react_hooks/react_hooks'))
-const Tools = lazy(() => import('./pages/tools/tools'))
-const Xss = lazy(() => import('./pages/xss/xss'))
-const X = lazy(() => import('./pages/x/x'))
-const Transformer = lazy(() => import('./pages/transformer/transformer'))
+const Hello = lazy(() => import('./pages/hello/Hello'))
+const Bind2 = lazy(() => import('./pages/bind2/Bind2'))
+const PictureList = lazy(() => import('./pages/picture_list/PictureList'))
+const ReduxPage = lazy(() => import('./pages/redux/ReduxPage'))
+const Antd = lazy(() => import('./pages/antd/Antd'))
+const Layout2 = lazy(() => import('./pages/layout2/Layout2'))
+const ReactHooks = lazy(() => import('./pages/react_hooks/ReactHooks'))
+const Tools = lazy(() => import('./pages/tools/Tools'))
+const Xss = lazy(() => import('./pages/xss/Xss'))
+const X = lazy(() => import('./pages/x/X'))
+const Transformer = lazy(() => import('./pages/transformer/Transformer'))
 
 function Loading() {
     const style = {
@@ -34,9 +34,10 @@ function Loading() {
     )
 }
 
-function App() {
+export default function App(props) {
+
     return (
-        <div className={style['app']}>
+        <div className={style.app}>
             <Router>
                 <div>
                     <nav>
@@ -78,23 +79,23 @@ function App() {
                     </nav>
                     <hr />
                     <Suspense fallback={<Loading />}>
-                        <Route path="/" exact render={() => <Redirect to="/hello" />} />
-                        <Route path="/hello" component={() => <Hello defaultName="你" />} />
-                        <Route path="/bind2" component={Bind2} />
-                        <Route path="/picture_list" component={PictureList} />
-                        <Route path="/redux_page" component={ReduxPage} />
-                        <Route path="/antd" component={Antd} />
-                        <Route path="/layout2" component={Layout2} />
-                        <Route path="/react_hooks" component={ReactHooks} />
-                        <Route path="/tools" component={Tools} />
-                        <Route path="/xss" component={Xss} />
-                        <Route path="/x" component={X} />
-                        <Route path="/transformer" component={Transformer} />
+                        <Switch>
+                            <Route path="/" exact><Redirect to="/hello" /></Route>
+                            <Route path="/hello"><Hello defaultName="你" /></Route>
+                            <Route path="/bind2"><Bind2 /></Route>
+                            <Route path="/picture_list"><PictureList /></Route>
+                            <Route path="/redux_page"><ReduxPage /></Route>
+                            <Route path="/antd"><Antd /></Route>
+                            <Route path="/layout2"><Layout2 /></Route>
+                            <Route path="/react_hooks"><ReactHooks /></Route>
+                            <Route path="/tools"><Tools /></Route>
+                            <Route path="/xss"><Xss /></Route>
+                            <Route path="/x"><X /></Route>
+                            <Route path="/transformer"><Transformer /></Route>
+                        </Switch>
                     </Suspense>
                 </div>
             </Router>
         </div>
     )
 }
-
-export default App

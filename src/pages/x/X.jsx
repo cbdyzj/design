@@ -1,9 +1,9 @@
 import React from 'react'
 
 import SomeContext from './c'
-import Y from './y'
+import Y from './Y'
 
-function X(props) {
+export default function X(props) {
 
     return (
         <SomeContext.Provider value={1}>
@@ -14,5 +14,3 @@ function X(props) {
         </SomeContext.Provider>
     )
 }
-
-export default X

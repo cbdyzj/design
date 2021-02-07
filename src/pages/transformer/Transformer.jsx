@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-import style from './style.less'
+import style from './style.module.less'
 
 const AsyncFunction = Object.getPrototypeOf(async function () {
 }).constructor
 
 const TRANSFORM_DELAY = 1000
 
-function Transformer() {
+export default function Transformer() {
     const [origin, setOrigin] = useState('')
     const [target, setTarget] = useState('')
     const [transformer, setTransformer] = useState('return origin')
@@ -52,7 +52,7 @@ function Transformer() {
     function applyTransform(func) {
         clearTimeout(timeoutHandle)
         const handle = setTimeout(func, TRANSFORM_DELAY)
-        setTimeoutHandle(handle as any)
+        setTimeoutHandle(handle)
     }
 
     return (
@@ -60,8 +60,8 @@ function Transformer() {
             <textarea
                 className={style['text-box']}
                 onChange={onTextChange}
-                value={origin}/>
-            <textarea readOnly className={style['text-box']} value={target}/>
+                value={origin} />
+            <textarea readOnly className={style['text-box']} value={target} />
             <textarea
                 className={style['transformer-box']}
                 onChange={onTransformerChange}
@@ -70,5 +70,3 @@ function Transformer() {
         </div>
     )
 }
-
-export default Transformer
