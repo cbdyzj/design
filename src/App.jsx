@@ -52,7 +52,7 @@ export default function App(props) {
                                 <Link to="/picture_list">Picture List</Link>
                             </li>
                             <li>
-                                <Link to="/redux_page">Redux page</Link>
+                                <Link to="/redux_page">Redux Page</Link>
                             </li>
                             <li>
                                 <Link to="/antd">antd</Link>
@@ -61,7 +61,7 @@ export default function App(props) {
                                 <Link to="/layout2">Layout2</Link>
                             </li>
                             <li>
-                                <Link to="/react_hooks">React hooks</Link>
+                                <Link to="/react_hooks">React Hooks</Link>
                             </li>
                             <li>
                                 <Link to="/tools">Tools</Link>
