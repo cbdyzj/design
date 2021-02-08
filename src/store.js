@@ -1,22 +1,28 @@
 import { createStore } from 'redux'
 
-function reducer(state, action) {
-    switch (action.type) {
-        case 'INCREMENT':
-            return {
-                ...state,
-                count: state.count + 1
-            }
-        case 'DECREMENT':
-            return {
-                ...state,
-                count: state.count - 1
-            }
-        default:
-            return state
-    }
-}
-
 const initialState = { count: 7 }
 
-export const store = createStore(reducer, initialState)
+const handlers = {
+    increment(state, action) {
+        return {
+            ...state,
+            count: state.count + 1
+        }
+    },
+    decrement(state, action) {
+        return {
+            ...state,
+            count: state.count - 1
+        }
+    },
+}
+
+function reducer(state, action) {
+    const handler = handlers[action.type]
+    if (typeof handler !== 'function') {
+        return state
+    }
+    return handler(state, action)
+}
+
+export default createStore(reducer, initialState)

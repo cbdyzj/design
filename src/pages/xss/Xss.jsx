@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { Button } from 'antd'
 
 import style from './style.module.less'
 
@@ -28,12 +27,12 @@ export default function Xss(props) {
             <h2>几个Web安全的例子</h2>
 
             <h4>XSS1</h4>
-            <Button onClick={xss1}>xss1</Button>
+            <button onClick={xss1}>xss1</button>
             <div ref={xss1Ref} />
             <br />
 
             <h4>XSS2</h4>
-            <Button onClick={xss2}>xss1</Button>
+            <button onClick={xss2}>xss1</button>
             <p>
                 <a id="link" target="_blank">一个超链接</a>
             </p>

@@ -6,7 +6,7 @@ import AntTable from '@/components/antd/AntTable'
 import AntPagination from '@/components/antd/AntPagination'
 import SuggestInput from '@/components/antd/SuggestInput'
 
-export default function Antd() {
+export default function Ant() {
     function onClickButton() {
         message.info('Welcome Ant Design!')
     }
@@ -53,8 +53,6 @@ export default function Antd() {
             <Row>
                 <AntPagination/>
             </Row>
-
-
         </div>
     )
 }

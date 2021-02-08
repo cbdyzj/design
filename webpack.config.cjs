@@ -2,6 +2,11 @@ const { resolve } = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const entries = [
+    { entryName: 'index', entryFile: './src/index.jsx' },
+    { entryName: 'ant', entryFile: './src/ant.jsx' },
+]
+
 module.exports = function (env) {
 
     return {
@@ -14,20 +19,20 @@ module.exports = function (env) {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-react'],
-                        }
+                        },
                     }],
                     exclude: /node_modules/,
                 }, {
-                    test: /\.(png|jpg|jpeg|gif)$/,
+                    test: /\.(svg|png|jpg|jpeg|gif)$/,
                     use: [{
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
                             fallback: {
                                 loader: 'file-loader',
-                                options: { outputPath: 'assets' }
-                            }
-                        }
+                                options: { outputPath: 'assets' },
+                            },
+                        },
                     }],
                 }, {
                     test: /\.module\.(css|less)$/,
@@ -44,7 +49,7 @@ module.exports = function (env) {
                         { loader: 'less-loader' },
                     ],
                 },
-            ]
+            ],
         },
         resolve: {
             extensions: ['.js', '.jsx'],
@@ -52,9 +57,11 @@ module.exports = function (env) {
         },
         plugins: [
             new CopyPlugin({ patterns: ['favicon.ico'] }),
-            new HtmlWebpackPlugin({
+            ...entries.map(entry => new HtmlWebpackPlugin({
+                filename: `${entry.entryName}.html`,
+                chunks: [entry.entryName],
                 template: 'index.html',
-            }),
+            })),
         ],
         optimization: {
             splitChunks: {
@@ -62,11 +69,14 @@ module.exports = function (env) {
                 automaticNameDelimiter: '_',
             },
         },
-        entry: './src/index.jsx',
+        entry: entries.reduce((a, c) => Object.assign(a, { [c.entryName]: c.entryFile }), {}),
         output: {
             filename: '[name].[chunkhash].js',
             chunkFilename: '[name].[chunkhash].js',
-            path: resolve(__dirname, 'dist')
+            path: resolve(__dirname, 'dist'),
+        },
+        devServer: {
+            hot: true,
         },
     }
 }

@@ -40,8 +40,8 @@ export default function Tools() {
     }
 
     return (
-        <div>
-            <div style={{ width: '20vw', margin: '32px 0 0 24px' }}>
+        <div style={{ width: '60%', margin: 'auto' }}>
+            <div style={{ maxWidth: '320px', margin: '32px 0 0 24px' }}>
                 <Dragger {...draggerConfig}>
                     <p className="ant-upload-drag-icon">
                         <InboxOutlined />

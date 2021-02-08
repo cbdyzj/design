@@ -18,11 +18,11 @@ function PageTurner(props) {
     const { dispatch } = props
 
     function increment() {
-        dispatch({ type: 'INCREMENT' })
+        dispatch({ type: 'increment' })
     }
 
     function decrement() {
-        dispatch({ type: 'DECREMENT' })
+        dispatch({ type: 'decrement' })
     }
 
     return (
