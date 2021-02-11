@@ -36,7 +36,7 @@ function Nav(props) {
         <nav>
             <ul style={{ margin: '10px 20px' }}>
                 {navList.map(it => (
-                    <li key={it.to} className="hover:text-blue-500" style={{ display: 'inline-block', margin: '2px 4px' }}>
+                    <li key={it.to} style={{ display: 'inline-block', margin: '2px 4px' }}>
                         <Link {...it} />
                     </li>
                 ))}

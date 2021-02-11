@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entries = [
     { entryName: 'index', entryFile: './src/index.jsx' },
-    // { entryName: 'ant', entryFile: './src/ant.jsx' },
 ]
 
 module.exports = function (env) {
@@ -20,10 +19,7 @@ module.exports = function (env) {
             loader: 'postcss-loader',
             options: {
                 postcssOptions: {
-                    plugins: [
-                        ['tailwindcss', { config: './tailwind.config.cjs' }],
-                        'autoprefixer',
-                    ],
+                    plugins: ['autoprefixer'],
                 },
             },
         }

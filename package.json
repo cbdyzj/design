@@ -26,10 +26,8 @@
   },
   "homepage": "https://github.com/cbdyzj/design#readme",
   "devDependencies": {
-    "@ant-design/icons": "^4.4.0",
     "@babel/core": "^7.12.13",
     "@babel/preset-react": "^7.12.13",
-    "antd": "^4.12.2",
     "autoprefixer": "^10.2.4",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",

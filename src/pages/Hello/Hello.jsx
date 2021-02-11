@@ -6,7 +6,7 @@ export default function Hello(props) {
 
     return (
         <div className={style.hello}>
-            <h2 className="text-xl">Hello Design</h2>
+            <h2>Hello Design</h2>
             <p>{navigator.userAgent}</p>
             <button>Hello</button>
         </div>
