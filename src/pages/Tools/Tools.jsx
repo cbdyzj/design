@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 import { Upload, message, Checkbox } from 'antd'
 import { InboxOutlined } from '@ant-design/icons'
 
-import Avatar from '@/components/avatar/Avatar'
+import Avatar from '@/components/Avatar/Avatar'
 
 const { Dragger } = Upload
 
 import { importExcelFile } from '@/utils/excel'
-import SlowInput from '@/components/slow_input/SlowInput'
+import SlowInput from '@/components/SlowInput/SlowInput'
 
 export default function Tools() {
 

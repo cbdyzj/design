@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Extract from '@/components/extract/Extract'
+import Extract from '@/components/Extract/Extract'
 import style from './style.module.less'
 
 export default function Layout2() {

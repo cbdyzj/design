@@ -17,7 +17,7 @@ const handlers = {
     },
 }
 
-function reducer(state, action) {
+function reducer(state = initialState, action) {
     const handler = handlers[action.type]
     if (typeof handler !== 'function') {
         return state
@@ -25,4 +25,4 @@ function reducer(state, action) {
     return handler(state, action)
 }
 
-export default createStore(reducer, initialState)
+export default createStore(reducer)

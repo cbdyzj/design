@@ -4,15 +4,15 @@ import { HashRouter as Router, Link, Route, Redirect, Switch } from 'react-route
 
 import store from '@/store'
 
-const Hello = lazy(() => import('./pages/hello/Hello'))
-const Bind2 = lazy(() => import('./pages/bind2/Bind2'))
-const PictureList = lazy(() => import('./pages/picture_list/PictureList'))
-const ReduxPage = lazy(() => import('./pages/redux/ReduxPage'))
-const Layout2 = lazy(() => import('./pages/layout2/Layout2'))
-const ReactHooks = lazy(() => import('./pages/react_hooks/ReactHooks'))
-const Xss = lazy(() => import('./pages/xss/Xss'))
-const X = lazy(() => import('./pages/x/X'))
-const Transformer = lazy(() => import('./pages/transformer/Transformer'))
+const Hello = lazy(() => import('@/pages/Hello/Hello'))
+const Bind2 = lazy(() => import('@/pages/Bind2/Bind2'))
+const PictureList = lazy(() => import('@/pages/PictureList/PictureList'))
+const ReduxPage = lazy(() => import('@/pages/redux/ReduxPage'))
+const Layout2 = lazy(() => import('@/pages/Layout2/Layout2'))
+const ReactHooks = lazy(() => import('@/pages/ReactHooks/ReactHooks'))
+const Security = lazy(() => import('@/pages/Security/Security'))
+const X = lazy(() => import('@/pages/x/X'))
+const Transformer = lazy(() => import('@/pages/Transformer/Transformer'))
 
 function Loading() {
     return (<div>loading...</div>)
@@ -45,7 +45,7 @@ function App(props) {
                                 <Link to="/react_hooks">React Hooks</Link>
                             </li>
                             <li>
-                                <Link to="/xss">Xss</Link>
+                                <Link to="/security">Security</Link>
                             </li>
                             <li>
                                 <Link to="/x">X</Link>
@@ -65,7 +65,7 @@ function App(props) {
                             <Route path="/redux_page"><ReduxPage /></Route>
                             <Route path="/layout2"><Layout2 /></Route>
                             <Route path="/react_hooks"><ReactHooks /></Route>
-                            <Route path="/xss"><Xss /></Route>
+                            <Route path="/security"><Security /></Route>
                             <Route path="/x"><X /></Route>
                             <Route path="/transformer"><Transformer /></Route>
                             <Route path="*">

@@ -1,11 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import PageTurner from './PageTurner'
 import Book from './Book'
 
 
-function ReduxPage(props) {
+export default function ReduxPage(props) {
     return (
         <div>
             <Book />
@@ -13,5 +12,3 @@ function ReduxPage(props) {
         </div>
     )
 }
-
-export default connect()(ReduxPage)

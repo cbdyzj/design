@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 
 import style from './style.module.less'
 
-export default function Xss(props) {
+export default function Security(props) {
     const xss1Ref = useRef()
 
     function xss1() {

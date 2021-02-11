@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Button, Row, message, Select, Modal } from 'antd'
 
-import AntTable from '@/components/antd/AntTable'
-import AntPagination from '@/components/antd/AntPagination'
-import SuggestInput from '@/components/antd/SuggestInput'
+import AntTable from '@/components/ant/AntTable'
+import AntPagination from '@/components/ant/AntPagination'
+import SuggestInput from '@/components/ant/SuggestInput'
 
 export default function Ant() {
     function onClickButton() {

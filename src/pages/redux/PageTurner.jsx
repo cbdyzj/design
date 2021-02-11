@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const style = {
     width: '4em',
@@ -14,8 +13,9 @@ const style = {
     margin: '0 .5em',
 }
 
-function PageTurner(props) {
-    const { dispatch } = props
+export default function PageTurner(props) {
+
+    const dispatch = useDispatch()
 
     function increment() {
         dispatch({ type: 'increment' })
@@ -36,5 +36,3 @@ function PageTurner(props) {
         </div>
     )
 }
-
-export default connect()(PageTurner)

@@ -10,6 +10,7 @@ function slowTask(val) {
             console.timeEnd('long-running')
         }
     }
+    return fakeArray
 }
 
 export default function SlowInput(props) {
@@ -27,7 +28,7 @@ export default function SlowInput(props) {
     return (
         <>
             <p>{val}</p>
-            <input value={val} onChange={handleInputChange}/>
+            <input value={val} onChange={handleInputChange} />
         </>
     )
 }
