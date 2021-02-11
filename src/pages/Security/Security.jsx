@@ -32,7 +32,7 @@ export default function Security(props) {
             <br />
 
             <h4>XSS2</h4>
-            <button onClick={xss2}>xss1</button>
+            <button onClick={xss2}>xss2</button>
             <p>
                 <a id="link" target="_blank">一个超链接</a>
             </p>

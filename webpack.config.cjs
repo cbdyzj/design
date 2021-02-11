@@ -4,10 +4,37 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entries = [
     { entryName: 'index', entryFile: './src/index.jsx' },
-    { entryName: 'ant', entryFile: './src/ant.jsx' },
+    // { entryName: 'ant', entryFile: './src/ant.jsx' },
 ]
 
 module.exports = function (env) {
+
+    function getStyleLoaders(module = false) {
+
+        const cssLoader = { loader: 'css-loader' }
+        if (module) {
+            cssLoader.options = { modules: true }
+        }
+
+        const postcssLoader = {
+            loader: 'postcss-loader',
+            options: {
+                postcssOptions: {
+                    plugins: [
+                        ['tailwindcss', { config: './tailwind.config.cjs' }],
+                        'autoprefixer',
+                    ],
+                },
+            },
+        }
+
+        return [
+            { loader: 'style-loader' },
+            cssLoader,
+            postcssLoader,
+            { loader: 'less-loader' },
+        ]
+    }
 
     return {
         mode: 'development',
@@ -36,18 +63,10 @@ module.exports = function (env) {
                     }],
                 }, {
                     test: /\.module\.(css|less)$/,
-                    use: [
-                        { loader: 'style-loader' },
-                        { loader: 'css-loader', options: { modules: true } },
-                        { loader: 'less-loader' },
-                    ],
+                    use: getStyleLoaders(true),
                 }, {
                     test: (name) => /\.(css|less)$/.test(name) && !/\.module\.(css|less)$/.test(name),
-                    use: [
-                        { loader: 'style-loader' },
-                        { loader: 'css-loader' },
-                        { loader: 'less-loader' },
-                    ],
+                    use: getStyleLoaders(),
                 },
             ],
         },

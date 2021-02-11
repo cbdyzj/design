@@ -47,7 +47,7 @@ processResources {
 
 node {
     version = '15.8.0'
-    npmVersion = '7.5.2'
+    npmVersion = '7.5.3'
     download = true
 }
 

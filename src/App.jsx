@@ -18,43 +18,40 @@ function Loading() {
     return (<div>loading...</div>)
 }
 
+function Nav(props) {
+
+    const navList = [
+        { to: '/hello', children: 'Hello' },
+        { to: '/bind2', children: 'Bind2' },
+        { to: '/picture_list', children: 'Picture List' },
+        { to: '/redux_page', children: 'Redux Page' },
+        { to: '/layout2', children: 'Layout2' },
+        { to: '/react_hooks', children: 'React Hooks' },
+        { to: '/security', children: 'Security' },
+        { to: '/x', children: 'X' },
+        { to: '/transformer', children: 'Transformer' },
+    ]
+
+    return (
+        <nav>
+            <ul style={{ margin: '10px 20px' }}>
+                {navList.map(it => (
+                    <li key={it.to} className="hover:text-blue-500" style={{ display: 'inline-block', margin: '2px 4px' }}>
+                        <Link {...it} />
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    )
+}
+
 function App(props) {
 
     return (
         <div>
             <Router>
                 <div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/hello">Hello</Link>
-                            </li>
-                            <li>
-                                <Link to="/bind2">Bind2</Link>
-                            </li>
-                            <li>
-                                <Link to="/picture_list">Picture List</Link>
-                            </li>
-                            <li>
-                                <Link to="/redux_page">Redux Page</Link>
-                            </li>
-                            <li>
-                                <Link to="/layout2">Layout2</Link>
-                            </li>
-                            <li>
-                                <Link to="/react_hooks">React Hooks</Link>
-                            </li>
-                            <li>
-                                <Link to="/security">Security</Link>
-                            </li>
-                            <li>
-                                <Link to="/x">X</Link>
-                            </li>
-                            <li>
-                                <Link to="/transformer">Transformer</Link>
-                            </li>
-                        </ul>
-                    </nav>
+                    <Nav />
                     <hr />
                     <Suspense fallback={<Loading />}>
                         <Switch>

@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 
 import style from './style.module.less'
 
-const AsyncFunction = Object.getPrototypeOf(async function () {
-}).constructor
+const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 
 const TRANSFORM_DELAY = 1000
 

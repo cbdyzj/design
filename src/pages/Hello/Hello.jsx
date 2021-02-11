@@ -1,11 +1,14 @@
 import React from 'react'
 
+import style from './style.module.less'
+
 export default function Hello(props) {
 
     return (
-        <div style={{ padding: '25px' }}>
-            <h2>hello design</h2>
+        <div className={style.hello}>
+            <h2 className="text-xl">Hello Design</h2>
             <p>{navigator.userAgent}</p>
+            <button>Hello</button>
         </div>
     )
 }
