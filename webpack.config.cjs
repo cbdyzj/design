@@ -35,36 +35,34 @@ module.exports = function (env) {
     return {
         mode: 'development',
         module: {
-            rules: [
-                {
-                    test: /\.jsx?$/,
-                    use: [{
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-react'],
+            rules: [{
+                test: /\.jsx?$/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-react'],
+                    },
+                }],
+                exclude: /node_modules/,
+            }, {
+                test: /\.(svg|png|jpg|jpeg|gif)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        fallback: {
+                            loader: 'file-loader',
+                            options: { outputPath: 'assets' },
                         },
-                    }],
-                    exclude: /node_modules/,
-                }, {
-                    test: /\.(svg|png|jpg|jpeg|gif)$/,
-                    use: [{
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            fallback: {
-                                loader: 'file-loader',
-                                options: { outputPath: 'assets' },
-                            },
-                        },
-                    }],
-                }, {
-                    test: /\.module\.(css|less)$/,
-                    use: getStyleLoaders(true),
-                }, {
-                    test: (name) => /\.(css|less)$/.test(name) && !/\.module\.(css|less)$/.test(name),
-                    use: getStyleLoaders(),
-                },
-            ],
+                    },
+                }],
+            }, {
+                test: /\.module\.(css|less)$/,
+                use: getStyleLoaders(true),
+            }, {
+                test: (name) => /\.(css|less)$/.test(name) && !/\.module\.(css|less)$/.test(name),
+                use: getStyleLoaders(),
+            }],
         },
         resolve: {
             extensions: ['.js', '.jsx'],
