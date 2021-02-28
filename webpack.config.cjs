@@ -3,7 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entries = [
-    { entryName: 'index', entryFile: './src/index.jsx' },
+    { name: 'index', file: './src/index.jsx' },
 ]
 
 module.exports = function (env) {
@@ -32,7 +32,7 @@ module.exports = function (env) {
         ]
     }
 
-    return {
+    const config = {
         mode: 'development',
         module: {
             rules: [{
@@ -82,14 +82,21 @@ module.exports = function (env) {
                 automaticNameDelimiter: '_',
             },
         },
-        entry: entries.reduce((a, c) => Object.assign(a, { [c.entryName]: c.entryFile }), {}),
+        entry: entries.reduce((a, c) => ({ ...a, [c.name]: c.file }), {}),
         output: {
             filename: '[name].[chunkhash].js',
             chunkFilename: '[name].[chunkhash].js',
             path: resolve(__dirname, 'dist'),
         },
-        devServer: {
-            hot: true,
-        },
     }
+
+    if (env && env['WEBPACK_SERVE']) {
+        Object.assign(config, {
+            devServer: {
+                hot: true,
+            },
+        })
+    }
+
+    return config
 }
