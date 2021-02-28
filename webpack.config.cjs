@@ -71,8 +71,8 @@ module.exports = function (env) {
         plugins: [
             new CopyPlugin({ patterns: ['favicon.ico'] }),
             ...entries.map(entry => new HtmlWebpackPlugin({
-                filename: `${entry.entryName}.html`,
-                chunks: [entry.entryName],
+                filename: `${entry.name}.html`,
+                chunks: [entry.name],
                 template: 'index.html',
             })),
         ],
