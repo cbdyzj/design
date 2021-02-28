@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 const style = {
     width: '4em',
-    borderWidth: '0px',
+    borderWidth: '0',
     borderRadius: '4px',
     background: '#1E90FF',
     cursor: 'pointer',
