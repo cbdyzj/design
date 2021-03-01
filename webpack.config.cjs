@@ -68,13 +68,22 @@ module.exports = function (env) {
             extensions: ['.js', '.jsx'],
             alias: { '@': resolve(__dirname, 'src') },
         },
+        externals: {
+            xlsx: 'xlsx',
+            axios: 'axios',
+            react: 'React',
+            redux: 'Redux',
+            'react-dom': 'ReactDOM',
+            'react-redux': 'ReactRedux',
+            'react-router-dom': 'ReactRouterDOM',
+        },
         plugins: [
             new CopyPlugin({ patterns: ['favicon.ico'] }),
-            ...entries.map(entry => new HtmlWebpackPlugin({
-                filename: `${entry.name}.html`,
-                chunks: [entry.name],
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                chunks: ['index'],
                 template: 'index.html',
-            })),
+            }),
         ],
         optimization: {
             splitChunks: {
@@ -82,7 +91,9 @@ module.exports = function (env) {
                 automaticNameDelimiter: '_',
             },
         },
-        entry: entries.reduce((a, c) => ({ ...a, [c.name]: c.file }), {}),
+        entry: {
+            index: './src/index.jsx',
+        },
         output: {
             filename: '[name].[chunkhash].js',
             chunkFilename: '[name].[chunkhash].js',
