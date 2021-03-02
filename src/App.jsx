@@ -7,7 +7,6 @@ import store from '@/store'
 const Hello = lazy(() => import('@/pages/Hello/Hello'))
 const Bind2 = lazy(() => import('@/pages/Bind2/Bind2'))
 const PictureList = lazy(() => import('@/pages/PictureList/PictureList'))
-const ReduxPage = lazy(() => import('@/pages/redux/ReduxPage'))
 const Layout2 = lazy(() => import('@/pages/Layout2/Layout2'))
 const ReactHooks = lazy(() => import('@/pages/ReactHooks/ReactHooks'))
 const Security = lazy(() => import('@/pages/Security/Security'))
@@ -26,7 +25,6 @@ function Nav(props) {
         { to: '/hello', children: 'Hello' },
         { to: '/bind2', children: 'Bind2' },
         { to: '/picture_list', children: 'Picture List' },
-        { to: '/redux_page', children: 'Redux Page' },
         { to: '/layout2', children: 'Layout2' },
         { to: '/react_hooks', children: 'React Hooks' },
         { to: '/security', children: 'Security' },
@@ -59,7 +57,6 @@ function App(props) {
                     <Route path="/hello"><Hello defaultName="你" /></Route>
                     <Route path="/bind2"><Bind2 /></Route>
                     <Route path="/picture_list"><PictureList /></Route>
-                    <Route path="/redux_page"><ReduxPage /></Route>
                     <Route path="/layout2"><Layout2 /></Route>
                     <Route path="/react_hooks"><ReactHooks /></Route>
                     <Route path="/security"><Security /></Route>

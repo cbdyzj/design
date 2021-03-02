@@ -69,8 +69,6 @@ module.exports = function (env) {
             alias: { '@': resolve(__dirname, 'src') },
         },
         externals: {
-            xlsx: 'xlsx',
-            axios: 'axios',
             react: 'React',
             redux: 'Redux',
             'react-dom': 'ReactDOM',
